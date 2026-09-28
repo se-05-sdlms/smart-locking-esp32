@@ -32,11 +32,11 @@ Mỗi con chip ESP32 được nhà sản xuất khắc sẵn một địa chỉ 
    ==========================================================
       SMART LOCKING SYSTEM (SE-05 SDLMS) - ESP32 FIRMWARE    
    ==========================================================
-      Hardware Chip MAC : 24:6F:28:8C:3B:12
-      DEVICE IDENTIFIER : LKR-8C3B12
-      WiFi Network      : iPhone1
-      IP Address        : 172.20.10.3
-      MQTT Broker       : vf2221aa.ala.asia-southeast1.emqxsl.com:8883
+      Hardware Chip MAC : 24:6F:28:XX:XX:XX
+      DEVICE IDENTIFIER : LKR-XXXXXX
+      WiFi Network      : <Ten_WiFi_Ket_Noi>
+      IP Address        : 192.168.1.x
+      MQTT Broker       : your_mqtt_broker.emqxsl.com:8883
       Status            : ONLINE & READY
    ==========================================================
       HUONG DAN CHO ADMIN WEB:
@@ -90,10 +90,10 @@ Firmware hỗ trợ điều khiển tối đa 4 ngăn tủ vật lý trên cùng
    const char* WIFI_SSID     = "Ten_WiFi_Cua_Ban";
    const char* WIFI_PASSWORD = "Mat_Khau_WiFi_Cua_Ban";
 
-   const char* MQTT_SERVER   = "vf2221aa.ala.asia-southeast1.emqxsl.com";
+   const char* MQTT_SERVER   = "your_mqtt_broker.emqxsl.com";
    const int   MQTT_PORT     = 8883;
-   const char* MQTT_USER     = "admin";
-   const char* MQTT_PASS     = "admin";
+   const char* MQTT_USER     = "your_mqtt_username";
+   const char* MQTT_PASS     = "your_mqtt_password";
 
    // Tùy chọn: Để trống "" để tự động lấy ID theo MAC chip
    const char* CUSTOM_DEVICE_ID = "";
