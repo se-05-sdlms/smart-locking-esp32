@@ -78,29 +78,51 @@ Firmware hỗ trợ điều khiển tối đa 4 ngăn tủ vật lý trên cùng
 
 ## 5. Hướng dẫn Nạp Code Cục Bộ Cho Thành Viên Nhóm
 
-1. Clone repo về máy:
-   ```bash
-   git clone https://github.com/se-05-sdlms/smart-locking-esp32.git
-   ```
-2. Mở thư mục `firmware/`, tạo file `secrets.h` cạnh file `firmware.ino` với nội dung:
-   ```cpp
-   #ifndef SECRETS_H
-   #define SECRETS_H
+### Bước 1: Clone repo về máy
+```bash
+git clone https://github.com/se-05-sdlms/smart-locking-esp32.git
+```
 
-   const char* WIFI_SSID     = "Ten_WiFi_Cua_Ban";
-   const char* WIFI_PASSWORD = "Mat_Khau_WiFi_Cua_Ban";
+### Bước 2: Tạo file `secrets.h` (Lưu thông tin bảo mật)
+Vì file `secrets.h` chứa thông tin nhạy cảm đã được `.gitignore` chặn lại để chống lộ mật khẩu, mỗi thành viên khi kéo code về cần tạo một file `secrets.h` ngay trong thư mục `firmware/` theo 1 trong 2 cách:
 
-   const char* MQTT_SERVER   = "your_mqtt_broker.emqxsl.com";
-   const int   MQTT_PORT     = 8883;
-   const char* MQTT_USER     = "your_mqtt_username";
-   const char* MQTT_PASS     = "your_mqtt_password";
+* **Cách 1 (Nhanh nhất - Ngay trên Arduino IDE):**
+  1. Mở file `firmware/firmware.ino` bằng **Arduino IDE**.
+  2. Bấm vào biểu tượng dấu **`⋮` (3 chấm dọc)** ở góc trên bên phải thanh tab code (hoặc nhấn tổ hợp phím `Ctrl + Shift + N`) $\rightarrow$ Chọn **New Tab**.
+  3. Đặt tên tab mới là: **`secrets.h`** rồi bấm **OK**.
+* **Cách 2 (Bằng File Explorer / Notepad):**
+  Vào thư mục `firmware/`, tạo một file mới đặt tên là **`secrets.h`** (lưu ý xóa đuôi `.txt` nếu có).
 
-   // Tùy chọn: Để trống "" để tự động lấy ID theo MAC chip
-   const char* CUSTOM_DEVICE_ID = "";
+### Bước 3: Dán nội dung mẫu vào `secrets.h` và điền thông tin
+Dán đoạn mã dưới đây vào file `secrets.h` vừa tạo và điền các thông tin của bạn vào các dấu ngoặc kép `""`:
 
-   #endif
-   ```
-3. Mở `firmware.ino` bằng **Arduino IDE**, chọn board **ESP32 Dev Module**, chọn cổng COM và bấm **Upload**.
+```cpp
+#ifndef SECRETS_H
+#define SECRETS_H
+
+// 1. Cấu hình mạng WiFi (Cần mạng 2.4GHz để ESP32 kết nối)
+const char* WIFI_SSID     = "";   // Nhập tên WiFi (hoặc điểm phát sóng 4G cá nhân)
+const char* WIFI_PASSWORD = "";   // Nhập mật khẩu WiFi
+
+// 2. Cấu hình MQTT Broker (EMQX Cloud Serverless)
+const char* MQTT_SERVER   = "";   // Nhập địa chỉ Broker (do nhóm cung cấp)
+const int   MQTT_PORT     = 8883; // Cổng kết nối bảo mật MQTTS (TLS/SSL)
+const char* MQTT_USER     = "";   // Nhập tài khoản MQTT
+const char* MQTT_PASS     = "";   // Nhập mật khẩu MQTT
+
+// 3. Tùy chọn định danh: Để trống "" để chip tự động sinh mã duy nhất theo MAC phần cứng
+const char* CUSTOM_DEVICE_ID = "";
+
+#endif
+```
+
+### Bước 4: Nạp code vào ESP32
+1. Kết nối bo mạch ESP32 với máy tính qua cáp Micro-USB/Type-C có truyền dữ liệu (Data cable).
+2. Trên Arduino IDE, chọn:
+   * **Board:** `ESP32 Dev Module`
+   * **Port:** Chọn đúng cổng `COM` của ESP32.
+3. Bấm nút **Upload (Mũi tên sang phải)** để nạp code.
+4. Mở **Serial Monitor** (tốc độ `115200 baud`) để xem mã thiết bị `LKR-XXXXXX` được cấp tự động.
 
 ---
 
