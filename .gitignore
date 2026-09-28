@@ -1,0 +1,12 @@
+# Ignore sensitive secret files containing real credentials
+**/secrets.h
+secrets.h
+*.local.h
+
+# Ignore temporary sketches and build artifacts
+sketch_aug21a/
+.vscode/
+.pio/
+*.o
+*.elf
+*.bin
