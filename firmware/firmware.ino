@@ -12,12 +12,21 @@
 #define NUM_CHANNELS 4
 const int RELAY_PINS[NUM_CHANNELS] = {23, 22, 21, 19};
 
+// Cấu hình chân Công tắc hành trình (Door Sensors) - hỗ trợ INPUT_PULLUP nội của ESP32
+const int SENSOR_PINS[NUM_CHANNELS] = {32, 33, 25, 26};
+
 // Thời gian kích mở chốt điện (2000ms = 2 giây, sau đó tự ngắt để bảo vệ cuộn hút)
 const unsigned long UNLOCK_DURATION_MS = 2000;
 
 // Biến quản lý thời gian đa nhiệm (non-blocking millis) cho từng ngăn tủ
 unsigned long unlockTimers[NUM_CHANNELS] = {0, 0, 0, 0};
 bool isUnlocked[NUM_CHANNELS]           = {false, false, false, false};
+
+// Quản lý trạng thái cửa và chống rung phím (Debounce 50ms)
+int currentDoorState[NUM_CHANNELS]          = {-1, -1, -1, -1};
+int lastDebouncedState[NUM_CHANNELS]        = {-1, -1, -1, -1};
+unsigned long lastDebounceTime[NUM_CHANNELS] = {0, 0, 0, 0};
+const unsigned long DEBOUNCE_DELAY_MS        = 50;
 
 // Định danh thiết bị (được tự động sinh từ MAC chip hoặc lấy từ secrets.h)
 String deviceId = "";
@@ -127,6 +136,18 @@ void callback(char* topic, byte* payload, unsigned int length) {
 }
 
 // =========================================================================
+// HÀM PHÁT BẢN TIN TRẠNG THÁI CỬA (OPEN / CLOSED) LÊN MQTT
+// Chuẩn topic: lockers/{deviceId}/doors/{kênh}/status
+// =========================================================================
+void publishDoorStatus(int channelIndex, const char* status) {
+  String statusTopic = "lockers/" + deviceId + "/doors/" + String(channelIndex + 1) + "/status";
+  // Gửi với retain = true để Server/Web vừa kết nối là biết ngay trạng thái hiện tại
+  client.publish(statusTopic.c_str(), status, true);
+  Serial.printf("[DOOR SENSOR] Ngan tu %d -> Trang thai: %s (Topic: %s)\n",
+                channelIndex + 1, status, statusTopic.c_str());
+}
+
+// =========================================================================
 // HÀM KẾT NỐI MQTT & ĐĂNG KÝ TOPIC DUY NHẤT
 // =========================================================================
 void reconnect() {
@@ -143,6 +164,11 @@ void reconnect() {
       Serial.printf("[MQTT] Da dang ky lang nghe: %s\n", subscribeTopic.c_str());
 
       printBanner();
+
+      // Đồng bộ trạng thái hiện tại ban đầu của toàn bộ các ngăn tủ lên Broker
+      for (int i = 0; i < NUM_CHANNELS; i++) {
+        publishDoorStatus(i, (lastDebouncedState[i] == LOW) ? "CLOSED" : "OPEN");
+      }
     } else {
       Serial.printf(" That bai, rc=%d. Thu lai sau 5 giay...\n", client.state());
       delay(5000);
@@ -161,6 +187,14 @@ void setup() {
   for (int i = 0; i < NUM_CHANNELS; i++) {
     pinMode(RELAY_PINS[i], OUTPUT);
     digitalWrite(RELAY_PINS[i], LOW);
+  }
+
+  // Khởi tạo các chân Công tắc hành trình (kích hoạt điện trở kéo lên nội INPUT_PULLUP)
+  for (int i = 0; i < NUM_CHANNELS; i++) {
+    pinMode(SENSOR_PINS[i], INPUT_PULLUP);
+    int initialVal = digitalRead(SENSOR_PINS[i]);
+    currentDoorState[i]   = initialVal;
+    lastDebouncedState[i] = initialVal;
   }
 
   // Bỏ qua xác thực chứng chỉ TLS/SSL trên EMQX port 8883
@@ -184,13 +218,34 @@ void loop() {
   }
   client.loop();
 
-  // Kiểm tra thời gian kích mở chốt của từng cửa
   unsigned long now = millis();
+
+  // 1. Kiểm tra thời gian kích mở chốt của từng cửa (tự ngắt relay sau 2s)
   for (int i = 0; i < NUM_CHANNELS; i++) {
     if (isUnlocked[i] && (now - unlockTimers[i] >= UNLOCK_DURATION_MS)) {
       digitalWrite(RELAY_PINS[i], LOW); // Tự động ngắt điện relay
       isUnlocked[i] = false;
       Serial.printf("[ACTION] << NGAN TU %d DA DONG VA KHOA LAI AN TOAN >>\n", i + 1);
+    }
+  }
+
+  // 2. Đọc cảm biến công tắc hành trình với thuật toán chống dội phím (Debounce)
+  for (int i = 0; i < NUM_CHANNELS; i++) {
+    int reading = digitalRead(SENSOR_PINS[i]);
+
+    // Nếu phát hiện tín hiệu thay đổi mức logic
+    if (reading != currentDoorState[i]) {
+      lastDebounceTime[i] = now;
+      currentDoorState[i] = reading;
+    }
+
+    // Nếu tín hiệu ổn định vượt quá thời gian debounce (50ms)
+    if ((now - lastDebounceTime[i]) > DEBOUNCE_DELAY_MS) {
+      if (reading != lastDebouncedState[i]) {
+        lastDebouncedState[i] = reading;
+        // LOW = lẫy bị đè (Cửa đóng) | HIGH = lẫy nhả ra (Cửa mở)
+        publishDoorStatus(i, (reading == LOW) ? "CLOSED" : "OPEN");
+      }
     }
   }
 }

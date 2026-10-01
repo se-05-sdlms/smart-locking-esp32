@@ -61,18 +61,27 @@ Khi nhóm lắp đặt thêm bất kỳ tủ mới nào:
 
 ## 4. Sơ đồ Chân Phần Cứng (GPIO Pinout)
 
-Firmware hỗ trợ điều khiển tối đa 4 ngăn tủ vật lý trên cùng 1 mạch:
+Firmware hỗ trợ điều khiển tối đa 4 ngăn tủ vật lý (kèm cảm biến công tắc hành trình báo trạng thái đóng/mở cửa) trên cùng 1 mạch ESP32:
 
-| Ngăn Tủ | Kênh Kỹ Thuật | Cổng Module Relay | Chân GPIO ESP32 | Topic Mở Khóa | Tải Điện (Relay) |
+### 4.1. Bảng Đấu Nối Chi Tiết
+
+| Ngăn Tủ | Kênh Kỹ Thuật | Module Relay (Kích Khóa) | Công Tắc Hành Trình (Báo Cửa) | Topic Điều Khiển (Sub) | Topic Trạng Thái Cửa (Pub) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Ngăn 1** | Kênh 1 | **IN1** | **GPIO 23** | `lockers/{id}/doors/1` | Relay 1 (Kích 2s tự ngắt) |
-| **Ngăn 2** | Kênh 2 | **IN2** | **GPIO 22** | `lockers/{id}/doors/2` | Relay 2 (Kích 2s tự ngắt) |
-| **Ngăn 3** | Kênh 3 | **IN3** | **GPIO 21** | `lockers/{id}/doors/3` | Relay 3 (Kích 2s tự ngắt) |
-| **Ngăn 4** | Kênh 4 | **IN4** | **GPIO 19** | `lockers/{id}/doors/4` | Relay 4 (Kích 2s tự ngắt) |
+| **Ngăn 1** | Kênh 1 | **IN1 $\leftrightarrow$ GPIO 23** | **NO $\leftrightarrow$ GPIO 32** (C $\rightarrow$ GND) | `lockers/{id}/doors/1` | `lockers/{id}/doors/1/status` |
+| **Ngăn 2** | Kênh 2 | **IN2 $\leftrightarrow$ GPIO 22** | **NO $\leftrightarrow$ GPIO 33** (C $\rightarrow$ GND) | `lockers/{id}/doors/2` | `lockers/{id}/doors/2/status` |
+| **Ngăn 3** | Kênh 3 | **IN3 $\leftrightarrow$ GPIO 21** | **NO $\leftrightarrow$ GPIO 25** (C $\rightarrow$ GND) | `lockers/{id}/doors/3` | `lockers/{id}/doors/3/status` |
+| **Ngăn 4** | Kênh 4 | **IN4 $\leftrightarrow$ GPIO 19** | **NO $\leftrightarrow$ GPIO 26** (C $\rightarrow$ GND) | `lockers/{id}/doors/4` | `lockers/{id}/doors/4/status` |
 
-* **Đặc điểm đi dây:** Bốn chân nối đối diện thẳng hàng song song 100% (IN1 $\leftrightarrow$ 23, IN2 $\leftrightarrow$ 22, IN3 $\leftrightarrow$ 21, IN4 $\leftrightarrow$ 19), có thể dùng nguyên dải dây bẹ phẳng mà không bị bắt chéo.
-* **Đối với tủ 1 ngăn (như Tủ B):** Cắm dây điều khiển vào chân **GPIO 23** (Kênh 1). Trên Web Admin khai báo 1 ngăn tủ (HardwareChannel = 1).
-* **Đối với tủ 4 ngăn (như Tủ A):** Cắm đủ 4 chân GPIO 23, 22, 21, 19 nối thẳng sang IN1, IN2, IN3, IN4.
+### 4.2. Nguyên lý hoạt động Công Tắc Hành Trình (Door Sensor)
+* **Chế độ chân:** ESP32 sử dụng điện trở kéo lên nội `INPUT_PULLUP` (Không cần gắn thêm điện trở ngoài).
+* **Đấu dây:** Chân `C` (Common) nối chung vào `GND` của ESP32. Chân `NO` (Normally Open) nối vào chân GPIO tương ứng.
+* **Logic tín hiệu:**
+  * **Cửa ĐÓNG chặt:** Cánh cửa ép cần gạt công tắc $\rightarrow$ Chân NO chạm chân C (GND) $\rightarrow$ GPIO đọc `LOW` $\implies$ Tự động gửi MQTT payload `"CLOSED"` (Retain).
+  * **Cửa MỞ bung ra:** Cần gạt nảy lên $\rightarrow$ Hở mạch $\rightarrow$ GPIO được kéo lên 3.3V đọc `HIGH` $\implies$ Tự động gửi MQTT payload `"OPEN"` (Retain).
+* **Chống dội phím (Debounce):** Firmware tích hợp sẵn thuật toán debounce `50ms` chống rung cơ học khi sập cửa.
+
+* **Đối với tủ 1 ngăn (như Tủ B):** Dùng Relay GPIO 23, Cảm biến cửa GPIO 32.
+* **Đối với tủ 4 ngăn (như Tủ A):** Dùng đủ 4 cặp Relay và Cảm biến cửa theo bảng trên.
 
 ---
 
