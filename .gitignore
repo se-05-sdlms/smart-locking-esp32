@@ -9,4 +9,7 @@ sketch_aug21a/
 .pio/
 *.o
 *.elf
-*.bin
+# Temporary test files & web testing tools
+*.html
+*test*.html
+firmware/*.html
