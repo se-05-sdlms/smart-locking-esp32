@@ -13,3 +13,7 @@ sketch_aug21a/
 *.html
 *test*.html
 firmware/*.html
+
+# Build/test artifacts are kept out of version control
+tests/ContractCheck/bin/
+tests/ContractCheck/obj/

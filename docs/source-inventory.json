@@ -1,0 +1,2358 @@
+{
+  "BE": [
+    {
+      "path": "README.md",
+      "lines": 401,
+      "sha256": "519bb658136173986f7614b1d7849b35d904a9c5360ced08d53b806417f87d26"
+    },
+    {
+      "path": "README.vn.md",
+      "lines": 401,
+      "sha256": "cb4917a7747277587e83e9db54b2eafd514a6e5adde7048f2383258a56ae838f"
+    },
+    {
+      "path": ".github\\PULL_REQUEST_TEMPLATE.md",
+      "lines": 36,
+      "sha256": "9810740f6e5161e3147b303d92a549924a6c3889d9db6824f3a2fa8c5a9e7c97"
+    },
+    {
+      "path": "docs\\bluetooth-integration.md",
+      "lines": 291,
+      "sha256": "7cc3c43c77c185bcfb9d70911b844ff1df5dd0022f26072b689f52eb6ccc2dca"
+    },
+    {
+      "path": "docs\\bluetooth-resident-shipper-plan.md",
+      "lines": 90,
+      "sha256": "219e2e5307f77ead4614256f13888e5ca2f790e4529e99609fc1c41f27961bce"
+    },
+    {
+      "path": "docs\\offline-pin-report-check.md",
+      "lines": 9,
+      "sha256": "eaf9307b708b659c469026cfc7326f8200d1b4d34750fba9a385ff904c39b888"
+    },
+    {
+      "path": "docs\\subscription-and-overdue.md",
+      "lines": 49,
+      "sha256": "b7bebf7c3576d10b94361a3d00bd753cb532e8d5d6b6e6a61e61dca893848da1"
+    },
+    {
+      "path": "docs\\supabase-image-storage.md",
+      "lines": 33,
+      "sha256": "b24484883d9feabce5244ba8ea83dcb94dc8ce3922e8dac1b2013414f7284e55"
+    },
+    {
+      "path": "smart-locking-be.API\\ApiExceptionHandler.cs",
+      "lines": 44,
+      "sha256": "d08ed0673d3c77dad58b2963e6437be469dbfdfc04fc8a272430a79e6cfc819a"
+    },
+    {
+      "path": "smart-locking-be.API\\DependencyInjection.cs",
+      "lines": 120,
+      "sha256": "034a6b4109e10201d66243289f024df6d4a482180cbb0f871eb1be57ba84b8f1"
+    },
+    {
+      "path": "smart-locking-be.API\\Program.cs",
+      "lines": 40,
+      "sha256": "8c74459e94f4cf54273bb4cbbc274be37bd408e5f16dc19f9320c3c24b209098"
+    },
+    {
+      "path": "smart-locking-be.API\\smart-locking-be.API.csproj",
+      "lines": 28,
+      "sha256": "79f1e2cf5f0ed6dcaae34856dbda4e92c4dbe0f44d3c51c14cf1ca17151ef12c"
+    },
+    {
+      "path": "smart-locking-be.Application\\DependencyInjection.cs",
+      "lines": 21,
+      "sha256": "8b268514e991d0815e5412d7c3c0a76734551bf4fa95ca5415466dd937e7312e"
+    },
+    {
+      "path": "smart-locking-be.Application\\smart-locking-be.Application.csproj",
+      "lines": 18,
+      "sha256": "50d96fac189274f16e992669d7f27fb291f0552bb64f9451e004b1b23427be1c"
+    },
+    {
+      "path": "smart-locking-be.Domain\\smart-locking-be.Domain.csproj",
+      "lines": 10,
+      "sha256": "b58ea0bd59807886b1e7cde3616779fcf7845c1616346653a30020eae4f2f51c"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\DependencyInjection.cs",
+      "lines": 130,
+      "sha256": "fd024af5d59d4d969d2bdb4cf3776b09f2bd3b712e918107d2d5d4225255764c"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\smart-locking-be.Infrastructure.csproj",
+      "lines": 37,
+      "sha256": "d4fca5fcb03b9a683527f1fcce43cb43f3846b603ab7b3561b515e84b1b0f242"
+    },
+    {
+      "path": "smart-locking-be.Tests\\smart-locking-be.Tests.csproj",
+      "lines": 31,
+      "sha256": "53f3e48ed9895d29f7f89ac073fb39c42067b91081e625a9a31fb8e9c6047ae7"
+    },
+    {
+      "path": "smart-locking-be.Tests\\Auth\\AuthServiceTests.cs",
+      "lines": 1337,
+      "sha256": "07a0276c9e482902d750a0d1cd5c151c20746884f4783dbea464cb4b22ce915b"
+    },
+    {
+      "path": "smart-locking-be.Tests\\Lockers\\LockerAccessServiceTests.cs",
+      "lines": 155,
+      "sha256": "b0df73488b7eedabc51bcfad8bd8ab1c476806e8e32df450e9427738dbd01bb8"
+    },
+    {
+      "path": "smart-locking-be.Tests\\Lockers\\MqttLockerListenerTests.cs",
+      "lines": 197,
+      "sha256": "79b9599e068fda00af267219f4fbddddd8b09741ac55086e5b86724d7f3ba7f2"
+    },
+    {
+      "path": "smart-locking-be.Tests\\Returns\\ReturnRequestServiceTests.cs",
+      "lines": 108,
+      "sha256": "0e2db941b6a54218b0a1f5b06c8b7c8db6f5c91f8d48e4074717e326ea3a1aba"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Auth\\AuthService.cs",
+      "lines": 390,
+      "sha256": "6d7214e91a6c38cbb49fe070504b1b9d074f1ceb368b4089f2dc3f163d6e0fac"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Auth\\JwtTokenService.cs",
+      "lines": 65,
+      "sha256": "030b9c7cf7601d96b4aa2fda7e26cbd6928d78fe5baccd0f20353b91eb1ec814"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Auth\\OtpService.cs",
+      "lines": 131,
+      "sha256": "70535baf163a1d4345e789b6f36797a42fdabf5ba64f8576f8608aa5c0935dd8"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Auth\\Pbkdf2PasswordHashService.cs",
+      "lines": 54,
+      "sha256": "9b54b8eaf533c80c71cdc197c522b0989303649f7d29c3a7561e84fa3593106e"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Auth\\Sha256TokenHashService.cs",
+      "lines": 26,
+      "sha256": "2f88f1951fcd354da63aceedb957a70992f20c05afa0f077bfd3f2e72facc929"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Options\\PayOSOptions.cs",
+      "lines": 10,
+      "sha256": "d1748b4c50a88cb1da0294d841efd528623a5ee332337b77efd9f88288d854bf"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Options\\SupabaseStorageOptions.cs",
+      "lines": 11,
+      "sha256": "4cd9e481f2ba98de6ecbbd3904eecbf53529e47a6e6af3cebe9c7bdbee768317"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\ApplicationDbContext.cs",
+      "lines": 76,
+      "sha256": "c946bb67e517ec66bf15b0f21ea1574ec1ad68d74dd48caaae1ef5f8b7f6c423"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\BluetoothWorkflowStore.cs",
+      "lines": 74,
+      "sha256": "2e6a3f6a4287eaaff187f7fe230767390b92f7dc043e8b15fe4dc34891580558"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\AdminService.cs",
+      "lines": 303,
+      "sha256": "ae57256912db09ff578820946f74c0b9a98a1177f2c249171d6faa019653561d"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\AuditLogService.cs",
+      "lines": 51,
+      "sha256": "16122603848ef729bdbe31d6aa003dc04e5fdd4ed16e117a8e50eae8cfe6bfd9"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\BluetoothProtocol.cs",
+      "lines": 63,
+      "sha256": "6e3ca3181cc08bb346012ea3952cf61d25aca54dee6eb8ccf275fac84fc49b31"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\CompartmentAllocationService.cs",
+      "lines": 100,
+      "sha256": "fc51cb5f71ce4885fe0cca422af4108bb043d8568dc6f0b9c7acea40c196f9a9"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\DeliveryRequestService.cs",
+      "lines": 653,
+      "sha256": "4965dd89176e3667f5c99c17dfa84d73cf97e16405746c97b3b031b031127f50"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\DeviceInstallationService.cs",
+      "lines": 128,
+      "sha256": "8191a838abe76a2cc17ed67e3549da35bb969ddeec7031103ceef7f5926ba7b1"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\EmergencyUnlockService.cs",
+      "lines": 81,
+      "sha256": "740fe82cf673ed12b9b81523e9faa58283a35c65164f40a8ec9162ad73cae527"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\ExpoPushNotificationService.cs",
+      "lines": 337,
+      "sha256": "b6c32973f811a709642dc5bfa9300dc324038c9f5a493cca3da8f15615cbf923"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\IncidentService.cs",
+      "lines": 600,
+      "sha256": "d1b61bc95a5d2d084c14da6c1ce78b71a67cf3747d4af6ad5788db5776587099"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\LockerAccessService.cs",
+      "lines": 172,
+      "sha256": "54f5aff2ae7d0471c9bcd9dcd09250ef349ae268b5d2466cc7cdce7cae5c865c"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\LockerService.cs",
+      "lines": 462,
+      "sha256": "ace26e7bf752c46dc5f1cc5f1865355e4d2d32864b62ff7b248f3bc5365a8445"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\MaintenanceService.cs",
+      "lines": 164,
+      "sha256": "c28d444ff3f86ae7b790a606cb7b5623a72dc873122937131b5dcb90c304bd7d"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\MqttLockerCommandDispatcher.cs",
+      "lines": 63,
+      "sha256": "38aed1c9bf6cd3d4da0a041491a9d92dc5602791b47ba714becb6db058d21722"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\MqttLockerListenerService.cs",
+      "lines": 310,
+      "sha256": "151a8c7e03add5a8eea3d07b2bac47ad42950c3a93c24e9e4a72a437ae67d57b"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\NotificationRuleService.cs",
+      "lines": 92,
+      "sha256": "30d236daa77a838eb34b57eff5d9f58cf01d738dd2ac521760db2ea7f8d6f2a2"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\NotificationService.cs",
+      "lines": 168,
+      "sha256": "b708e3e9132b479e06b36f89c05835da39ce3e8b3104274b7e86eff573c2d13b"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\OfflinePinNotificationWorker.cs",
+      "lines": 41,
+      "sha256": "f3c52ea8a2ac9c3c603e5c0a0e5bf4b7d53961b4db2630ffba7ac70128894331"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\OfflinePinProvisioner.cs",
+      "lines": 86,
+      "sha256": "796bc76cb64e51e237adc79e2909d1d616aea21fbcacd09a2e8b9db72db376e8"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\OfflinePinService.cs",
+      "lines": 287,
+      "sha256": "f42a30296cafd441be442c500741410ca30221501b887bf8b38ac0a4fcac64ca"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\OfflineReturnSync.cs",
+      "lines": 113,
+      "sha256": "b03921da2cc00ab1a99947caa1e6fcc07f6b5bd36f6b59d7bc36bd56722472ef"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\OperationalRecordService.cs",
+      "lines": 198,
+      "sha256": "1dc08e7a3e60483160ef1d7eadcaea1d31bdacc4ef8dc760beb5d8764a560836"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\OperationsService.cs",
+      "lines": 152,
+      "sha256": "d58be63107c87a27f2edde77a035273b57861c0294433677d0c83762d5fb9dee"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\OverdueChargeService.cs",
+      "lines": 89,
+      "sha256": "d0c4c5e9404ae60b39b5c2f16b62207cb15eb833878fe2d28bd31c845b73f8c5"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\ParcelPickupService.cs",
+      "lines": 124,
+      "sha256": "906f105ab07ac783f2a3ef479159e61631ddd383976db15b420eb967c5d294c0"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\ParcelReminderService.cs",
+      "lines": 60,
+      "sha256": "bdf9efcc5f30fc0b35f982f581fc658d6ebb72e702c2fac1206fa850de1703b0"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\ParcelRetrievalEligibility.cs",
+      "lines": 34,
+      "sha256": "658c7023c8dafd215b24b0ba3f23c7898bff245296f620884fcd62ee22d63ef0"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\ParcelService.cs",
+      "lines": 270,
+      "sha256": "fae9b83cc2b390b5c5c1aa8e8a958dce069a51825012ff383e280aa4b2ed00ef"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\ParcelTimeline.cs",
+      "lines": 27,
+      "sha256": "b60ba6c7826e3df15e98ce6282a393674720775575156e5e6301fffbe841ea20"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\PayOSPaymentGatewayService.cs",
+      "lines": 68,
+      "sha256": "4c5982fd94da3b95aee86a6ab8522e78f4a7028faefd394a0d5ba93c1e157c05"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\ReportService.cs",
+      "lines": 26,
+      "sha256": "0149022b30ebddb57ced7ed71038a58e22fcb5302894d1229e3d649f5d8d9d4d"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\ResidentService.cs",
+      "lines": 160,
+      "sha256": "3998d158c8084b07bfeb0c42ca57a3420571712a4460a26906f35cdc3f3a2137"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\ResidentSubscriptionService.cs",
+      "lines": 120,
+      "sha256": "5f84977fecd9d672fd0c74c25d9cbab281f7412a4eb70e1ae24a6cb1f48060fc"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\ReturnRequestService.cs",
+      "lines": 273,
+      "sha256": "2fc8ed8c836dcd3b26c46f3201d51902a0a3bff38c3391b0833c6d72454ba870"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\Service.cs",
+      "lines": 27,
+      "sha256": "8a1925c2934086382e87a135b004285ac6c0716ab88d00071a4ca990a5993e07"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\SubscriptionPlanService.cs",
+      "lines": 68,
+      "sha256": "c970998fe02b4b79c415b2a3862961509027c7048d3a17b073a21cc56c65f902"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\SupabaseImageStorageService.cs",
+      "lines": 96,
+      "sha256": "2cfd02545a18793c1b2c8da330eb82310964eb41f44ff19adb6bb2c118de24db"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\SystemPolicyService.cs",
+      "lines": 137,
+      "sha256": "94d423f77420a00cce2c00d39e7ccb2ac336a8773dfe159f1853fe89d7744c67"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Services\\UserService.cs",
+      "lines": 507,
+      "sha256": "08982e31dcebc246a2dca524284cad725b184fe11bd79a1e71d6c12f9d2dfae1"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\AuditLogConfiguration.cs",
+      "lines": 29,
+      "sha256": "a59db56f237d4b58c5535ed5963b330daaa70fea26091ad9571d4a0012573801"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\BaseConfiguration.cs",
+      "lines": 33,
+      "sha256": "33a2a691ad1836aafba39a2f447424319707ac0bc1ee14e590b9caa2e5d41e7f"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\CompartmentReservationConfiguration.cs",
+      "lines": 46,
+      "sha256": "ab3deb95166bd516890d780deb1018f7b84023aecb737c61c10595a0fecfb18d"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\DeliveryRequestConfiguration.cs",
+      "lines": 52,
+      "sha256": "065e3a28531f904daf7fe1710d0ac2b67aacb7d7b4ec8f1ce35a9c3564a62dc1"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\DeviceInstallationConfiguration.cs",
+      "lines": 29,
+      "sha256": "c8d4ec805affafe346befe02ad9ba7519624e37bb25a0e1e1e4eac5b1bd58226"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\EmergencyUnlockConfiguration.cs",
+      "lines": 38,
+      "sha256": "d575cb6afd65062353cbc4df7fcd6dea6d32dfdfbcf7847512c789ef06923cf9"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\IncidentActionConfiguration.cs",
+      "lines": 30,
+      "sha256": "2a86a72374af1e85bc04bc8745deb1b3c0389d71b15f47250462e94a262742b9"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\IncidentConfiguration.cs",
+      "lines": 69,
+      "sha256": "e050b7a519bcd543e4bc71334be660cdd5c8ddc48fe2b9dfc5de10f2339e181b"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\LockerAccessEventConfiguration.cs",
+      "lines": 56,
+      "sha256": "951f61cd5aec1c1589fac69adfb101ae64ff58c393d4e04d5146e5ce0cd535d0"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\LockerCompartmentConfiguration.cs",
+      "lines": 36,
+      "sha256": "c606f0c2c52b52ba549bee269459a8f36b1a6bc6306652566d72361b2e98b634"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\LockerConfiguration.cs",
+      "lines": 29,
+      "sha256": "6c27bb509ffd4ec6a1c941e5104205d24d3c5a1d0df55b051daeba4f3d304cef"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\LockerEventConfiguration.cs",
+      "lines": 38,
+      "sha256": "b07e33392a566d55cfc468a8fbdf79c1cb87c8b5f002fa61060b3998d52c7d60"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\MaintenanceActivityConfiguration.cs",
+      "lines": 30,
+      "sha256": "0749dc5fe2b01b26d41cf2b4e7a9df2afd4480f95bfe30704ad361793e9d5ca5"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\MaintenanceRequestConfiguration.cs",
+      "lines": 44,
+      "sha256": "cf208f5301df32568b8238733eef97226bf880e8bb462cf32dc223fca0f7346c"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\NotificationConfiguration.cs",
+      "lines": 55,
+      "sha256": "1b840e5768c4ed13604cd07cb1e5b23db6793e60ad703b79b39f74f61400b4ad"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\NotificationRuleConfiguration.cs",
+      "lines": 29,
+      "sha256": "f7d2cb0fa1a17e07e60e584de30767957639ef02d344c0e9fa782747c46465a0"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\OfflineLockerEventConfiguration.cs",
+      "lines": 30,
+      "sha256": "72c5c12c1ec8b7ae9e8ec82c619406126fdc8fa6edec9c83ce2a404a557638f8"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\OfflineLockerPinConfiguration.cs",
+      "lines": 18,
+      "sha256": "b55d43de9219e4766c187e8e5ad49e863abffaef7d28c37c1b53274dd664255b"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\OperatorAssignmentConfiguration.cs",
+      "lines": 33,
+      "sha256": "d5f09c6eb1a478ae6b7aa0c9a1d6140a75d9a1cac9bbf38de9b54d75455ac14e"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\OtpChallengeConfiguration.cs",
+      "lines": 33,
+      "sha256": "4a3b643d71ec257f20dbb0abaaabdeac205a5881b240e670b7fc7536c7f46bc7"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\OverdueChargeConfiguration.cs",
+      "lines": 31,
+      "sha256": "ec684b1f5df319c17ea749da15ad650a8ba3c4b1a788411a37371fc46371eedb"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\ParcelConfiguration.cs",
+      "lines": 45,
+      "sha256": "9fad46c32bdd57360b958d69959759442ec77542c253557ed024163d507916c9"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\ParcelStatusHistoryConfiguration.cs",
+      "lines": 29,
+      "sha256": "2f7ae4fd96306bcae54293869f43a659f1e20ca3718547e4a187760015d213a5"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\PaymentTransactionConfiguration.cs",
+      "lines": 40,
+      "sha256": "39b366faf8d1403a09dcb4143da71f2d0d995eb084b1f8f167ccba7d02aceb71"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\RefreshTokenConfiguration.cs",
+      "lines": 34,
+      "sha256": "e1aeb190a15bf9ad184519d8eca21e9b46a327cd17c55e76c8c46fef3c4e4aef"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\ResidentBiometricConfiguration.cs",
+      "lines": 29,
+      "sha256": "ea94aa5b0855a451bfa9875f19e1a563f4fe15305f6678735ccfdf2e8533335c"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\ResidentProfileConfiguration.cs",
+      "lines": 33,
+      "sha256": "c33f18f3f42097e4332673f3ec9efb73d65a26b1a9483bef5b71992c57d9622f"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\ResidentSubscriptionConfiguration.cs",
+      "lines": 35,
+      "sha256": "fb7a31834402927ef33575cd517af27bd05439f3289b569d30db7f7be1f88fed"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\ReturnRequestConfiguration.cs",
+      "lines": 59,
+      "sha256": "9d302a5683673f095a9505206a5d5b60310331a1c15ed56f67555579b8768332"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\SubscriptionPlanConfiguration.cs",
+      "lines": 26,
+      "sha256": "08aa0b220ec5abc6a48cb9da67cef2fcf79bf2258793721c2966ab5b1a3fedc7"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\SystemPolicyConfiguration.cs",
+      "lines": 44,
+      "sha256": "65ba4da5c939490db36edc7119299cd2fe5a603a35fa27b9aea0eb4db494622e"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
+      "lines": 34,
+      "sha256": "08d846b435bb4edd30c1bb8c6fe66ab2eeadccb619bc02e4153f4f59ba686762"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260917055707_InitialCreate.cs",
+      "lines": 1479,
+      "sha256": "2c94cf9c065c95f658641b3b03e2a324f2c0bf65b9af326df0ebf2380ab55dec"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260917055707_InitialCreate.Designer.cs",
+      "lines": 2283,
+      "sha256": "41d3c01d681be3eef77ee0c0a663109b53f9875eb2d4620d4be840daa4c39faa"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260921133850_AddDeviceInstallations.cs",
+      "lines": 63,
+      "sha256": "f42372d745ba25e467cf0a7eddb4ca240234ad009c3161ddeef4fa45f004d205"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260921133850_AddDeviceInstallations.Designer.cs",
+      "lines": 2349,
+      "sha256": "2ff3b5cd0baecdfc352108a4cc4cd407ee31049305bcab04a3c8e9521ede5799"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260923153144_EnforceSingleActiveOperatorPerLocker.cs",
+      "lines": 40,
+      "sha256": "67402ef1563664443d10d5028dbbbab1cf51079083d814d5d2fbaaee616c0d96"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260923153144_EnforceSingleActiveOperatorPerLocker.Designer.cs",
+      "lines": 2287,
+      "sha256": "62ba3e08fff649582172abd5e9966e637b1bd48be848d9b290cd9dd12928720f"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260924120031_LinkDeliveryRequestNotifications.cs",
+      "lines": 50,
+      "sha256": "7263bbb3ee241b261fd327163e715e6352089e1f980fd39a5ec43aaac4c83d31"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260924120031_LinkDeliveryRequestNotifications.Designer.cs",
+      "lines": 2364,
+      "sha256": "0d22f46b972078c3c06d9075d2b431c16d294591a830a4b62cfca576c3c40d90"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260929145001_AddResidentRegisteredLocker.cs",
+      "lines": 50,
+      "sha256": "61869e2e04bc132a540a3d1f5993ab13247677b499106fd51175836c84135d0d"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260929145001_AddResidentRegisteredLocker.Designer.cs",
+      "lines": 2379,
+      "sha256": "443d1f2c6f8a9607c97d5268f7b54006b51ed17d50f57e5d4c018a08f89ce53a"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260930162126_RemovePersonalQr.cs",
+      "lines": 88,
+      "sha256": "c81074f66c63261528a4852b6762af1a7cd9b29c83ed48f6f86a3935df85084b"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260930162126_RemovePersonalQr.Designer.cs",
+      "lines": 2364,
+      "sha256": "d81d6dc4b0633030ff3fab7efa76360ae0806f9ac55a96b21649e19760449ea2"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260930185411_AddIncidentReporting.cs",
+      "lines": 61,
+      "sha256": "a469afee09c828bcb03ad4040660a28a6697eb3561dda305e8ca16bbefdf67a1"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20260930185411_AddIncidentReporting.Designer.cs",
+      "lines": 2383,
+      "sha256": "4cf3df4692ae15e0ddb4fd6982fe640c6c2d7fe7b6eeaed770f41ba2fdc9401f"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20261005041237_AddReturnWorkflowNotifications.cs",
+      "lines": 50,
+      "sha256": "49d8a23a0d0ed605150b9d2c7e79da2590212c04c44bf7a61195426d197d763b"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20261005041237_AddReturnWorkflowNotifications.Designer.cs",
+      "lines": 2398,
+      "sha256": "ece3f95d2d41b09874668d53854b0c3e8b043c5c04c72e1dbedb27d3d608e1e1"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20261008122047_RefactorV2Operations.cs",
+      "lines": 83,
+      "sha256": "e76df79ab8122bdb9aef2d527c0396153563091b7864e305048f9c4a4eb90312"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20261008122047_RefactorV2Operations.Designer.cs",
+      "lines": 2389,
+      "sha256": "37f5fefb135a1609bf462382ea944bc24b8109c032df987d0b89362cf1844591"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20261013111240_AddSubscriptionSystem.cs",
+      "lines": 98,
+      "sha256": "3f50dc64d8356143d5a4a1d727ad2b1cc79128821523f1838bf6e451f5bd1bea"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20261013111240_AddSubscriptionSystem.Designer.cs",
+      "lines": 2521,
+      "sha256": "a93ed4ea56549c910f0aeee5f10d4fbabc637b9743bda70303ea64d4ec263c7d"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20261018115426_AddBluetoothOfflineWorkflow.cs",
+      "lines": 128,
+      "sha256": "47dd54b19b3370cd5fd5fe8c5c0507bc7333f40fdd239a8c64a23bcc13b85041"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\20261018115426_AddBluetoothOfflineWorkflow.Designer.cs",
+      "lines": 2664,
+      "sha256": "d44aad4a4bd001d0f2b0146006827cb3d9f943c42a1c1f148a37142d7b455d50"
+    },
+    {
+      "path": "smart-locking-be.Infrastructure\\Persistence\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+      "lines": 2661,
+      "sha256": "5fc3bce4db2519c6aa4a4592814497ae928f367a7895935cae4e73303c2c9cdc"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\AuditLog.cs",
+      "lines": 59,
+      "sha256": "cccb93aee3f2f6ee135eb9ae05e0b4317a4efeec38398a75d24a0586d9583d10"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\CompartmentReservation.cs",
+      "lines": 62,
+      "sha256": "d6155d8e0f27c8c53f439d7e27375e0fa355917ee312652e6023e0838f57c6b1"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\DeliveryRequest.cs",
+      "lines": 174,
+      "sha256": "fe371d26c6a44c5dd8c64f7723aa99b419038d07d11b397613959c31d5b88eb7"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\DeviceInstallation.cs",
+      "lines": 25,
+      "sha256": "bc5bc5b05b43b31262c587b29f3cabd26a6f30cff59ea03209d32fe64ee8e5af"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\EmergencyUnlock.cs",
+      "lines": 74,
+      "sha256": "101d88cfb871e14260bd2521dc5d66a4d831fb8faad7256995f71aba287a9084"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\Incident.cs",
+      "lines": 179,
+      "sha256": "5b3e823daf9e8e44b1144a2849fd3578e43c44ebd9a06d84e028621eeaae0968"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\IncidentAction.cs",
+      "lines": 59,
+      "sha256": "03cd62d42c2ae6cce8447e1c3334f43c85a2252829d3c655859bce0dafd67a7a"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\Locker.cs",
+      "lines": 109,
+      "sha256": "6a5b6bdfc251e604b0cb69bab25414eb5ff714811e78d404fafff2d40f233c44"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\LockerAccessEvent.cs",
+      "lines": 109,
+      "sha256": "af8447220188bc4a21b2dd93341e45306d1a8c74a732c01a7a18f474b73ac744"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\LockerCompartment.cs",
+      "lines": 99,
+      "sha256": "b1c0a4de82ecb4dd83074ac79ef7463102f4335f3cfbe1339f5deb2b849bda11"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\LockerEvent.cs",
+      "lines": 84,
+      "sha256": "28ffa9223ce86533ce2e01d780fafe869f755bd23798fe120e7810548114d5d6"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\MaintenanceActivity.cs",
+      "lines": 59,
+      "sha256": "82f8f806142543b618d44676fa2449d4abb23e4c24844b716238f6675832c453"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\MaintenanceRequest.cs",
+      "lines": 94,
+      "sha256": "bb1b1336e5f01a196e53c014e9106777cd26b84173ef3fd5abaa683cd73a07e0"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\Notification.cs",
+      "lines": 113,
+      "sha256": "57638b5491b1febac7f206c8ba597839879f795f3fe14005ec32496291d735d9"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\NotificationRule.cs",
+      "lines": 44,
+      "sha256": "9c2c49531742202ec89534ec547e7d0e5520d24f72de2d7cba123b46f957cd26"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\OfflineLockerCursor.cs",
+      "lines": 8,
+      "sha256": "4b2f0471ae2bef90e3eaecf37876bc19de8b1021164234a62633a0c5c6093437"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\OfflineLockerEvent.cs",
+      "lines": 21,
+      "sha256": "ed8e3044d6f4d6323e5f8a8030f22d208109c07a1695b01a90ef2b0c59fca51c"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\OfflineLockerPin.cs",
+      "lines": 14,
+      "sha256": "48a78e5e3e30daceacd8225c6068c7f69e8b7d3ba83f6b063ebd0f9d932d888d"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\OperatorAssignment.cs",
+      "lines": 57,
+      "sha256": "4613662ad4a8a7f8d56b21157c1e554fb341b23dc5155b837229181e8a439596"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\OtpChallenge.cs",
+      "lines": 79,
+      "sha256": "79fa0eb3179c0ca097eaf08760e404cb1c3d3fefafc68b320de5565bf9425608"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\OverdueCharge.cs",
+      "lines": 74,
+      "sha256": "86a2e6617a34cd60e93c2d5fab58a4fa2ad46abe2441242f94f2ff7c90eb93bb"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\Parcel.cs",
+      "lines": 119,
+      "sha256": "1e45556b89ca55a0710e4ad4b0e8e317eebbfe2c3afeeffebe18435214cd1248"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\ParcelStatusHistory.cs",
+      "lines": 54,
+      "sha256": "7df09d3c000c1d7209f9768afc9f802d4a55b18ae1cf302f9ff123b14c933d22"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\PaymentTransaction.cs",
+      "lines": 74,
+      "sha256": "bdad2a640b23aef7554919378a1bb9f9a15def64fffbe4bfa4573e8ddcae0a1c"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\RefreshToken.cs",
+      "lines": 67,
+      "sha256": "c2725388590ec5a45d77e522128ce91b1a7ec0e6e7601a7707913c6f8c49af4d"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\ResidentBiometric.cs",
+      "lines": 42,
+      "sha256": "e5cb878fb0664746e882d9752d6eb4b43a8ab8a84209f7f0f45cf21756b92c90"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\ResidentProfile.cs",
+      "lines": 89,
+      "sha256": "2d7e4bf701aa02c396f0bbc52d4ebb502ee1a093d08cbc9d637ad8787128df18"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\ResidentSubscription.cs",
+      "lines": 79,
+      "sha256": "2b5ded801fe55b48819153338b11a00854edb4f787a9b394de1595e1bfab0209"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\ReturnRequest.cs",
+      "lines": 140,
+      "sha256": "9b360feba2ba3533bb2bff67de923a21e4ff567f63a59b54c723a31a7b2ad067"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\SubscriptionPlan.cs",
+      "lines": 62,
+      "sha256": "c0e9be96e2bf5c35f18dd499eb8a935d3fee40c3a2ee1a34678a96e2570ef593"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\SystemPolicy.cs",
+      "lines": 141,
+      "sha256": "708fcf96cc93841e2a2fd7879c8aa9e1cd3946b81703ca28964ff0017fa42219"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Entities\\User.cs",
+      "lines": 159,
+      "sha256": "e8c4fe8b4ac57690ee499f949dc879e4802ecc4f87240ca2921ea0d6a43bf8ce"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Enums\\DeliveryEnums.cs",
+      "lines": 270,
+      "sha256": "2e1b50138b50a0e88df6db004ce95c1467096b826600ff77ac87d58d190bd17a"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Enums\\IdentityEnums.cs",
+      "lines": 96,
+      "sha256": "c4aa8cec1c53dbf8570d635526842a5132a254f9633bccc768c2c059875d3560"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Enums\\LockerEnums.cs",
+      "lines": 183,
+      "sha256": "04d4e095473596ccdba51ef85ac5f5ec3916bea2b7b79d0b3ba0e8183410b40f"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Enums\\OperationsEnums.cs",
+      "lines": 173,
+      "sha256": "d28843dba9c59c3fce6e1dfb98f2737bce5a8a9cc011c0ae49cc229815d9816a"
+    },
+    {
+      "path": "smart-locking-be.Domain\\Enums\\SubscriptionEnums.cs",
+      "lines": 27,
+      "sha256": "ee11915a65d7839e456347804fc6049d6f20962640d47e89db0f02fbd061b031"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\IService.cs",
+      "lines": 13,
+      "sha256": "d9c000d2e5752eb6117e710233a5a4faaebb19f2ca2659201986b9aadea0746d"
+    },
+    {
+      "path": "smart-locking-be.Application\\Services\\BluetoothWorkflowService.cs",
+      "lines": 97,
+      "sha256": "5abac946a63f05d633559733c22acf759753706600b935abddc52cce28b4525a"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IAdminService.cs",
+      "lines": 14,
+      "sha256": "b1284ccb289b8bdce8b99a68a614222bab4bcb576607f43dd3fe714197378e91"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IAuditLogService.cs",
+      "lines": 21,
+      "sha256": "eae9178508bbeb2754634c4f619213101c4d347b20f3be4e97483e4519197141"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IAuthService.cs",
+      "lines": 34,
+      "sha256": "00f57a9f9cab4cb03d9f83ba21d879015087b2c95a77d02f1dc3e9ed78fff976"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IBluetoothMessageCodec.cs",
+      "lines": 14,
+      "sha256": "09e4ec5b326246c22076a7db80821ee2dc7d2d038d31829e48c7bec07f57dcc7"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IBluetoothWorkflowService.cs",
+      "lines": 10,
+      "sha256": "2d846dc1951c7834b8caf05cf03c872676609efb67835c45ed378a68075bd3aa"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IBluetoothWorkflowStore.cs",
+      "lines": 19,
+      "sha256": "1549382724d083489f75c7a98590cf7b3e86a49c978a4196a0575f09508a577e"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\ICompartmentAllocationService.cs",
+      "lines": 20,
+      "sha256": "b19566b42b445ceb1543d1e23f8b7f6762c28933c0d404b9197fe34ce6ffb3f5"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IDeliveryRequestService.cs",
+      "lines": 55,
+      "sha256": "d4502167b6133e20c4bc022db7567f02f62869ce5c07d767ccf33ebc14e5e72c"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IDeviceInstallationService.cs",
+      "lines": 16,
+      "sha256": "919be1c1f8e1cd6bb5a1a735bcab0db79c434d74ae48d89a55b59cb3197df91b"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IEmergencyUnlockService.cs",
+      "lines": 12,
+      "sha256": "c5d87f49aa64381d1172f9bf989da0f3754663a47da137c4292aa8fc8ece3be3"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IImageStorageService.cs",
+      "lines": 10,
+      "sha256": "30cc19bdaeaaefff9c02451c68aa9b4a4256fcd9c5a9dc4f84b0bfc9b8b24079"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IIncidentService.cs",
+      "lines": 46,
+      "sha256": "ccb115512d754175026fc9e343166056906f060bffa47239eda1dbc4a468c275"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IJwtTokenService.cs",
+      "lines": 8,
+      "sha256": "2a7c03f7c4b438f56c9a439d1a5b31e2ec73d4f10522157ef467ba7811c930c1"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\ILockerAccessService.cs",
+      "lines": 10,
+      "sha256": "764c20ecb6289dd63386e9bf115d1ee19ae06c3100786bcc3298cebabb8f5255"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\ILockerCommandDispatcher.cs",
+      "lines": 10,
+      "sha256": "d3423553d6de415357ca485b54d7d702dc5557b721cfd0c5efa1b674b737460e"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\ILockerService.cs",
+      "lines": 22,
+      "sha256": "79fc16f2f4e8fc01ea4378b039554156779eb67bd20e87e7cf1f2ad13c168144"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IMaintenanceService.cs",
+      "lines": 13,
+      "sha256": "cab4e38fae7412330bd444490050b1839861f43636fa94b4ad8856bff354866f"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\INotificationRuleService.cs",
+      "lines": 14,
+      "sha256": "faf50d8f6aa52a0fb6bebcc6fff248ced6bc34602c6479e8fe0f622912564bee"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\INotificationService.cs",
+      "lines": 25,
+      "sha256": "8da65283e517fda5908a432a28422a82b98d2b95cd36d5b7e0fe72ff3a38506a"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IOfflinePinService.cs",
+      "lines": 12,
+      "sha256": "9d2ef184e638fff0c73456f9603aabc9a8bbcc8dcc8d2f22c4253d203623f91b"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IOperationalRecordService.cs",
+      "lines": 26,
+      "sha256": "b8665bfbcb4c0a8d8e1e150b634fa92343b2a8c7f05862fa6b118f96c31d7103"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IOperationsRealtimeNotifier.cs",
+      "lines": 9,
+      "sha256": "0c4a43210cfc88b33d2bde89e19cb8dba2926c9a6818731b48eb2e591975c023"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IOperationsService.cs",
+      "lines": 18,
+      "sha256": "b3298974b263ce02fe78b55d2ce392025287705fafef2346dcaa29dc4d58e2d2"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IOtpService.cs",
+      "lines": 19,
+      "sha256": "7d63a165989f555f65876d791ec622d7ca6db8a3076e0967e3adfc3a9fafbd50"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IOverdueChargeService.cs",
+      "lines": 6,
+      "sha256": "5b12d56e8a7a65227457680f2df662ebe1b604b018ea365ea2f14cb9aa234bdc"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IParcelPickupService.cs",
+      "lines": 19,
+      "sha256": "bdaab217413fca90961fd1e77664351a14b0b6042d1eba5f6b983de01ca31f5d"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IParcelReminderService.cs",
+      "lines": 6,
+      "sha256": "1de009b5305108c131b7a1c7c1bb26529106f7869fc4bf8c7dd16edf2c377292"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IParcelService.cs",
+      "lines": 35,
+      "sha256": "ff0922859746fa5470a6fa01442d2c6deffaafcdf4fd61a7b531b053763e596e"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IPasswordHashService.cs",
+      "lines": 8,
+      "sha256": "e2db8f84191f46c5f1de3543ad4e0df7daa93b5cf30040fb3b11d975b260fb24"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IPaymentGatewayService.cs",
+      "lines": 9,
+      "sha256": "5158aa0d241b8ceb8ae384c924964d7da34378169739c5a787437ab151c2fd48"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IPushNotificationService.cs",
+      "lines": 44,
+      "sha256": "5ceb782c4a83805da5fa49ef375aa8444efd8e6d5ada87567895ce4d73ad1dd2"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IReportService.cs",
+      "lines": 8,
+      "sha256": "989b2fa636de3907c0385b728135b35eb719fdaacc3fb59602b2dfa181ac08fa"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IResidentService.cs",
+      "lines": 12,
+      "sha256": "8c0788a7f7573c296d41f6922e5851c19c21180ead2b7737d187a3a65365228c"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IResidentSubscriptionService.cs",
+      "lines": 13,
+      "sha256": "06fd6e2b1d231bb76950548de97a605b8b51520ba2e1df0b445588c22a45fb55"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IReturnPickupSessionService.cs",
+      "lines": 26,
+      "sha256": "e93a5e064af72479d88b1f5494cbcd335edd046cda73964d73250fc113de9493"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IReturnRequestService.cs",
+      "lines": 19,
+      "sha256": "d68c1451ea9826415600b5ebce898f7b29ee18000cd7f9112bb4a5fa61fe49be"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\ISubscriptionPlanService.cs",
+      "lines": 10,
+      "sha256": "1c6d423ab509dec89e8a9eeedf74587d5c1ed9b1306c2ada8a712c123c364c27"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\ISystemPolicyService.cs",
+      "lines": 13,
+      "sha256": "b7b6b12711f19134bece025c70594773108f1ea236a638622d26c9b4f5a2ba91"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\ITokenHashService.cs",
+      "lines": 10,
+      "sha256": "bf55d2efae3ecc30a1aaf50ac976f1dba30b5116b27a1f80e5819df8833793a4"
+    },
+    {
+      "path": "smart-locking-be.Application\\Interfaces\\Services\\IUserService.cs",
+      "lines": 50,
+      "sha256": "019b4bb8d379d3311f4b1f4f77ecaa2ff4a0288872f03cd5ce576e42df21ea2b"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Auth\\AuthRequests.cs",
+      "lines": 30,
+      "sha256": "80a6d125af449005be12b34e00e30be0d694412384ce31b71528bad695a78c09"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Auth\\AuthResponses.cs",
+      "lines": 22,
+      "sha256": "cc2c866a3bbae10c9d5299f3c63f2bcbe611a492f6211a6fcadae3b340d5abe1"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Common\\PagedResult.cs",
+      "lines": 8,
+      "sha256": "344a9bc2372f288b14835c87404cd6db547ff4de48fef14d33f1f6f183ca335d"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Dashboards\\AdminDashboardResponse.cs",
+      "lines": 11,
+      "sha256": "c2574e1727d1ac0ddc15f0f611a42220ecd2b0256a9313fe08ff6d08ce4d11a8"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Dashboards\\AttentionLockerResponse.cs",
+      "lines": 11,
+      "sha256": "f798e9a7ca02127b1a08f7fd54bb88754283a47db4a8039ebc76a778c944c16b"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Dashboards\\CompartmentStatusDistributionResponse.cs",
+      "lines": 10,
+      "sha256": "126cd8f5a5b9e517f2736f6115ba4363619d76cafc9dca1a21eea7c78e6626e2"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Dashboards\\DailyParcelStatisticResponse.cs",
+      "lines": 7,
+      "sha256": "cc82506539084a116889f549f58f683c97951ad35048db5514b6cf2868226172"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Dashboards\\GetDashboardOverviewRequest.cs",
+      "lines": 6,
+      "sha256": "90a49f2e7cde9a9fcaa92e32894313353723930d413aae2f0226b0475ba81ac8"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Dashboards\\GetSystemStatisticsRequest.cs",
+      "lines": 5,
+      "sha256": "e4d1e35e305e079fce318d103528b7423bfb8d2b87d05576c446197b78bc4962"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Dashboards\\LockerStatusDistributionResponse.cs",
+      "lines": 9,
+      "sha256": "a16541d1d0e2a125122b06ac2e5541527696ec28745258e937c3888e31df9337"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Dashboards\\RecentAuditLogResponse.cs",
+      "lines": 12,
+      "sha256": "da8f077630299497f84a8529e4482091d72626463ceba4935e3cca964165d07b"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Dashboards\\RecentLockerResponse.cs",
+      "lines": 13,
+      "sha256": "331723a87d6d0c4cfbaa0a2fdba54512a6413a8c3dfd1c5a99ca72a6e4a32b69"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Dashboards\\SystemStatisticsResponse.cs",
+      "lines": 19,
+      "sha256": "470c98f30b162fe52166727799ca48f01abc6b7c37d56abc458e2bbf7be4030c"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeliveryRequests\\CompartmentReservationResponse.cs",
+      "lines": 12,
+      "sha256": "26d3aad6ce535ea25c1ec30b7d7e1633e468e2c834174b4188ee9c4433c7b963"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeliveryRequests\\DeliveryRequestSummaryResponse.cs",
+      "lines": 10,
+      "sha256": "fa71e2f5be0aacae8f530606b57562cf41f42a59d695472fd4fe7f907ecce04d"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeliveryRequests\\DropOffConfirmationResponse.cs",
+      "lines": 9,
+      "sha256": "c9ca1a886ca268aa41bf46c8ef79ff58984297b4edd886418a767d73ff42068f"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeliveryRequests\\GuestDeliveryStatusResponse.cs",
+      "lines": 14,
+      "sha256": "eea623aac770d2a8acbb4d910e66ff576304da0924ed29bf11754306fef694b7"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeliveryRequests\\InitiateDeliveryRequest.cs",
+      "lines": 3,
+      "sha256": "4dd221cfd40537ad16aeb1068affdad410e2f32dd3f71417accf44cd756b0241"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeliveryRequests\\InitiateDeliveryResponse.cs",
+      "lines": 10,
+      "sha256": "e1868a750fe9f888c494a2d51ee2d9779db45861a871254e4fb42d8e9466a678"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeliveryRequests\\PendingDeliveryRequestResponse.cs",
+      "lines": 10,
+      "sha256": "88d73b27c4bee219681224244ae2694c9a39e89847d7ef960b866d8d07bac38a"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeliveryRequests\\SubmitDeliveryRequest.cs",
+      "lines": 3,
+      "sha256": "9cb3cddad30b0a69ab9bc952a4df9b3c0553ce2a2a3640339b2fdbe57d433e70"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeliveryRequests\\SubmitRecipientPhoneRequest.cs",
+      "lines": 3,
+      "sha256": "4c2accb4e2f8436b6b997371ba16b1b75732fbae8978b98cbee7ba0768d3dc95"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeliveryRequests\\UploadParcelImageRequest.cs",
+      "lines": 3,
+      "sha256": "1e733e99c41a688924105e427513514042fee76eb68a35225e2e94f73df6ec2b"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeviceInstallations\\DeviceInstallationResponse.cs",
+      "lines": 9,
+      "sha256": "e063f64d96763700cf148dde6ae3cc857be7d4158e3efffd8deb017b7620c0e8"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\DeviceInstallations\\RegisterDeviceInstallationRequest.cs",
+      "lines": 6,
+      "sha256": "affee5b193c39d9f35e56c2c6193f3344bf0f355383cdb451bf3b14c2c43b51b"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Incidents\\IncidentDtos.cs",
+      "lines": 91,
+      "sha256": "6ecaae53ad92ea7cd049c63610b89b7f3f56c4675779b0a3925c7bbc8a1326e1"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Lockers\\BluetoothWorkflowDtos.cs",
+      "lines": 7,
+      "sha256": "bfe52222f41819ba757a3b57bb6cd123a92040561dab3ecd570761d0095ced54"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Lockers\\CreateCompartmentRequest.cs",
+      "lines": 7,
+      "sha256": "5a6b720ad7357ada3bcd63183d6eace4a8656d0ffd87debb0487651613c2726b"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Lockers\\CreateLockerRequest.cs",
+      "lines": 8,
+      "sha256": "a4e23313e8a0c18b6b4b963925c7b61dcc9f3bb4f0fc9f6fbac6c8b7be24b8c0"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Lockers\\LockerAccessDtos.cs",
+      "lines": 34,
+      "sha256": "1d9443900b766db0b1cfbef0555987f4b2461ebf28de0c15450a3ab7972e8555"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Lockers\\LockerCompartmentResponse.cs",
+      "lines": 15,
+      "sha256": "d50a4713a9aeafe273cfae19a3d7069470efea1bf017abd43a0e4bec69360ff8"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Lockers\\LockerDetailResponse.cs",
+      "lines": 17,
+      "sha256": "910aa1c480c48b31cff9a8eec758aa590e316726af0a60da97a7c161f6f853d5"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Lockers\\LockerSummaryResponse.cs",
+      "lines": 18,
+      "sha256": "115188177f4de54c9e9a85888b48d28e84fbd07114b31c274b161f5fa6757bff"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Lockers\\OfflinePinDtos.cs",
+      "lines": 15,
+      "sha256": "6da44d2fee623cb0ffa928356b6dea7dce7b3ac4ce75eeadabad331460660c5b"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Lockers\\UpdateCompartmentStatusRequest.cs",
+      "lines": 7,
+      "sha256": "cd962e0ac0c118fc79ca14c6938dac52f7406f10d31ee60bea0406928bd0bffb"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Lockers\\UpdateLockerRequest.cs",
+      "lines": 11,
+      "sha256": "07fcd3ac390ef2ff96c8b25e5302d1b6dc106f6bf628d23fe9fe7f1dd4050581"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Notifications\\NotificationDtos.cs",
+      "lines": 36,
+      "sha256": "690a36a1c7dcd0386c67d39b4a71c2cb2a2ee23ead9b6f47d93f41ab1d944712"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Notifications\\RealtimeEvent.cs",
+      "lines": 9,
+      "sha256": "3fd121eb83cb27288bb7db015fe491a9af0ad319b7fcea2d548fdf3054e7d680"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Operations\\OperationsDtos.cs",
+      "lines": 39,
+      "sha256": "364efaeb189b1290b919bec39a57b21c6e106387762e91f1a40aff88ad39a354"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Parcels\\ParcelPickupResponses.cs",
+      "lines": 20,
+      "sha256": "8914efb7f39051f3248bdcc19a6e480b1f1fbc50a650c20b10032774955b7794"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Parcels\\ParcelResponses.cs",
+      "lines": 65,
+      "sha256": "ac246115d6ac9148358e54f2afc6302c8d01b015b3ac997adbf9a8fcc59a8518"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Payments\\PaymentGatewayDtos.cs",
+      "lines": 9,
+      "sha256": "7638f346d35ad89e9bbf8719fad97546ffff239512149d52b95b2140a5b8c696"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Residents\\ResidentProfileResponse.cs",
+      "lines": 18,
+      "sha256": "7300a8cd97ad733d02c455c48e6566bb2d90bd9705ee116a65c17d55b9771d00"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Residents\\UpdateApprovalModeRequest.cs",
+      "lines": 7,
+      "sha256": "0507811d55a5ea370706afde5103f4ef1ed43e4206de234c44ce13ab7ccd91a4"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Residents\\UpdateResidentProfileRequest.cs",
+      "lines": 7,
+      "sha256": "91456615de04d7fb9c21f8cfaa6f833d961b18b3cbb658ec341af3e7da953ae3"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Returns\\ReturnDtos.cs",
+      "lines": 22,
+      "sha256": "f0edaeb89b3de41077fb91d9585668f272e826dc0a19be8b5e0d536287734222"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Subscriptions\\ResidentSubscriptionDtos.cs",
+      "lines": 5,
+      "sha256": "87c45b5505e0801fd4b4f532d485006857f5fc371a49568e97912d74ad34ce47"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Subscriptions\\SubscriptionPlanDtos.cs",
+      "lines": 5,
+      "sha256": "9fd6684990450cc504e43c4f5776db322fb328542595932bbdca7fbd76305c31"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\SystemPolicies\\SystemPolicyDtos.cs",
+      "lines": 48,
+      "sha256": "2d6a7f1a69db51e94ee1a3fbdf213d8fcde5edb6e57a2786e2d49dd42d75c03e"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Users\\AssignOperatorScopeRequest.cs",
+      "lines": 6,
+      "sha256": "2201bfe0547962fc8190da6795501c762d36b656ee1dcaac663bf85f74ab68c9"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Users\\CreateUserRequest.cs",
+      "lines": 13,
+      "sha256": "fddd589cfef715eab045b28b94cb7552ae949271ab2ec1220eb505cf28d8afda"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Users\\CreateUserResponse.cs",
+      "lines": 14,
+      "sha256": "65adb19e8cf256f964257114a07559c745721ada6f45c624b1ca90321cddc3ab"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Users\\GetUsersFilterRequest.cs",
+      "lines": 11,
+      "sha256": "a407595a6e4369d040d721183874dcb6c9bb25d44e62983ce4c80c920bf31cf7"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Users\\OperatorAssignmentResponse.cs",
+      "lines": 10,
+      "sha256": "be5c02196cd4d467cb762b9880880582fe624b11eb1c6b61b5e39d47853275d5"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Users\\UpdateUserRequest.cs",
+      "lines": 7,
+      "sha256": "a31165e9e0b94bffbb6bcbefd7b903aa4f40b889068bf5da37715e9dc0638852"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Users\\UpdateUserStatusRequest.cs",
+      "lines": 8,
+      "sha256": "6857b9bd58b9512d5ef9bdea648e6a3744348454ede4e00dd2cb1d7ce45cbb58"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Users\\UserDetailResponse.cs",
+      "lines": 21,
+      "sha256": "1545c02ba4938c797de1586ec0c9b5cbee7e0b5c488e536120e59968e0477ef9"
+    },
+    {
+      "path": "smart-locking-be.Application\\DTOs\\Users\\UserListItemResponse.cs",
+      "lines": 15,
+      "sha256": "0dd0e4799c31cc7e5f25b30afa2b6920719f929a1dae66fbddb20f2d814002ee"
+    },
+    {
+      "path": "smart-locking-be.API\\Authorization\\ApiPolicies.cs",
+      "lines": 29,
+      "sha256": "6aa32195b10755fbc9cba0ab4734a39d7fa9dc50eb68a664258a51f8e49d3e64"
+    },
+    {
+      "path": "smart-locking-be.API\\Constants\\RateLimitPolicyNames.cs",
+      "lines": 11,
+      "sha256": "de89504988ca093d8081882c775b0d27d89f3286c0fed4e30a14e25f79a6a68a"
+    },
+    {
+      "path": "smart-locking-be.API\\Constants\\RequestTimeoutPolicyNames.cs",
+      "lines": 11,
+      "sha256": "97b62932e1f8b4b81dfdb193e63b92333df878ab968a71223af7ca1b6cec2ee6"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\AdminController.cs",
+      "lines": 50,
+      "sha256": "2918e4d35ed44f1d3534210e53460bed5d7ea0a71165e570410a66545e81b5fc"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\AuditLogsController.cs",
+      "lines": 27,
+      "sha256": "11f7b13527de495d067a1aa324e92679545e07a3a8447dbd7adbcf0e84a81884"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\AuthController.cs",
+      "lines": 173,
+      "sha256": "4c18cd4b5e02676d9d46c6a48f9e1bf5a8cf41336d9c7b915381100b37ee28d1"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\BluetoothWorkflowController.cs",
+      "lines": 32,
+      "sha256": "7c63453fb54023358310744a997e4dc68419dbbcd140fccafeb40a318138839a"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\DeliveryRequestsController.cs",
+      "lines": 137,
+      "sha256": "5332e102ebd15502d82d704ec9cc3bb94200a8c69f235849ea48ddf1f6bb57a8"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\DeviceInstallationsController.cs",
+      "lines": 79,
+      "sha256": "3ab15f2569018cdab2732a5508ec7118b8908d0cf67a9fe82647ed71d3208dbf"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\EmergencyUnlocksController.cs",
+      "lines": 24,
+      "sha256": "6b905cad7173fb1a72c51062efe0c92d69f7e236242ebba6e0deb0e843708d85"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\ImagesController.cs",
+      "lines": 38,
+      "sha256": "c1be0230adb4e20c9f07899481da6da2243fc732c0dfd695cb9ab0c60b7176e1"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\IncidentsController.cs",
+      "lines": 81,
+      "sha256": "257e2afea5be22090991c454e48bcb2ac015ddbe391f4f0362a95ace5f618a4b"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\LockersController.cs",
+      "lines": 171,
+      "sha256": "7f42cd6b05fba0981820e555cdd7fbb41069832103281518b5b725601fa56d82"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\MaintenanceRequestsController.cs",
+      "lines": 40,
+      "sha256": "ebc967f42a03378663aa093f2e01a11234af3fb983cf88d33c0d801d1663acf5"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\NotificationRulesController.cs",
+      "lines": 41,
+      "sha256": "fa665e6237b134eafc6a608c7174db9a580b335d66ca66bcd1a47a332af68b15"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\NotificationsController.cs",
+      "lines": 82,
+      "sha256": "7953f8a754d9f96079bd06544384af9145c265bc76cc0ba8c66cacb05c0dd99a"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\OfflinePinController.cs",
+      "lines": 26,
+      "sha256": "133342d290b3d6112f92321d851601e6d46059130257761c8e6b988bd05901a1"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\OperationalRecordsController.cs",
+      "lines": 33,
+      "sha256": "62594fab03b7a88b682d17398624367a83b2c54fbd829b23c3a473bb3e2c6e7e"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\OperationsController.cs",
+      "lines": 56,
+      "sha256": "97a939e82ea8b1117aa0b59d820773de0c543717b84f08463d51de7880620b66"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\OperatorIncidentsController.cs",
+      "lines": 71,
+      "sha256": "3b35afcca088762a239e54f330ac140b94041a2fcd1243c29c84536c397dfc9d"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\ParcelsController.cs",
+      "lines": 157,
+      "sha256": "73fb8298c4bdabe8bf5ef3dbee6d4fd3e85709c426757bc3ae5196e971411d7f"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\PaymentWebhooksController.cs",
+      "lines": 25,
+      "sha256": "79216350f8fa004cf56663b7196cb6ec509f2043307a213f60f554288157dc9c"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\ReportsController.cs",
+      "lines": 28,
+      "sha256": "96d57b2d35093f21cb9225dc47b092ab990eb2927a94fed4ebb2675a80e50f5b"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\ResidentsController.cs",
+      "lines": 84,
+      "sha256": "5fbe392c8ab576389ec92935d2847d63e5cae5c2507ce135774f0c9d315e05b3"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\ResidentSubscriptionsController.cs",
+      "lines": 26,
+      "sha256": "ec5ea87416b8d86d19a210e038319cffcc0637ade99f664d55e588f3b4a4ba23"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\ReturnPickupSessionsController.cs",
+      "lines": 35,
+      "sha256": "a374515263768c0c8cf31a384a173839f211a78840c67daa65a3695ce46e0bb6"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\ReturnsController.cs",
+      "lines": 22,
+      "sha256": "fdfd332ef306a0ba5b083195dcea5ae11b8a3c33e4ece933998a7aacecf597f3"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\SampleController.cs",
+      "lines": 56,
+      "sha256": "8b23b6b610874131af82a1cb1dd97689649e899b4753cb408ef66c3362e6ee36"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\SubscriptionPlansController.cs",
+      "lines": 25,
+      "sha256": "8786ff1da7a94c9ce1e0b74f929e207579a3651bdfcb7fc496b517f66fe75a2b"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\SystemPoliciesController.cs",
+      "lines": 41,
+      "sha256": "03af7aba495f7b0e210b82c245815064f1a9feba3535eb3355a1b06c2c4f1fa7"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\UploadsController.cs",
+      "lines": 24,
+      "sha256": "0d17318e589cfe1f4bd982870b9a4da5bf0260bcbfa355a7dc6f2658e3d45572"
+    },
+    {
+      "path": "smart-locking-be.API\\Controllers\\UsersController.cs",
+      "lines": 147,
+      "sha256": "1a6e61b3a08195f5ec27aade83d0340a4bfcf863c9399c22112b78c5a6c6a8fa"
+    },
+    {
+      "path": "smart-locking-be.API\\Extensions\\CorsExtensions.cs",
+      "lines": 42,
+      "sha256": "dfc06bcc5ff523fd5af1425fc4142432f13254087d59b52836706922baac804d"
+    },
+    {
+      "path": "smart-locking-be.API\\Extensions\\FileUploadLimitExtensions.cs",
+      "lines": 30,
+      "sha256": "53a99058fc73b0c222c7621633ad52c53501f5ab1eb05d5c3784c7cc1477a699"
+    },
+    {
+      "path": "smart-locking-be.API\\Extensions\\JwtAuthenticationExtensions.cs",
+      "lines": 84,
+      "sha256": "3241aca6a25788959e316c74ff63e3a5c57226312a7126014a34f2122e6712a1"
+    },
+    {
+      "path": "smart-locking-be.API\\Extensions\\RateLimitingExtensions.cs",
+      "lines": 192,
+      "sha256": "77b710d5f51586172002acef4682878389449665a46ec5151a4e1864f96c21cc"
+    },
+    {
+      "path": "smart-locking-be.API\\Extensions\\RequestTimeoutExtensions.cs",
+      "lines": 43,
+      "sha256": "4aa41db9356d97e4ef2cc267d3a11b90a5c3f2f1b42869ae46f604dac64e69aa"
+    },
+    {
+      "path": "smart-locking-be.API\\Extensions\\SwaggerExtensions.cs",
+      "lines": 42,
+      "sha256": "8a84b61d6524a96e34cce15d1efaa8aadb3ad0709c036bfdfc716e69f37132c3"
+    },
+    {
+      "path": "smart-locking-be.API\\Hubs\\OperationsHub.cs",
+      "lines": 35,
+      "sha256": "e14779f4b4fe65cca17a757c00932e1be37b8cc3ae39937e1a393b60695679f3"
+    },
+    {
+      "path": "smart-locking-be.API\\Middleware\\PasswordChangeRequiredMiddleware.cs",
+      "lines": 32,
+      "sha256": "c4c4841f72c691ff88a210261208cb7dc7716be83be9753ccf022b3600f92aeb"
+    },
+    {
+      "path": "smart-locking-be.API\\Options\\FileUploadSettings.cs",
+      "lines": 14,
+      "sha256": "092db3ed4144b36cf8cdd699598289b74a2f96ddebad196d4a3c90dd278b1565"
+    },
+    {
+      "path": "smart-locking-be.API\\Options\\RateLimitSettings.cs",
+      "lines": 76,
+      "sha256": "150ad819de99084158e5b10faaa48c88d2f89c82c2e376ab69f7262ca27ef19f"
+    },
+    {
+      "path": "smart-locking-be.API\\Options\\RequestTimeoutSettings.cs",
+      "lines": 13,
+      "sha256": "8909a937fbdb99463d781981959d6d228004497d448f90ddd11cb76538f44132"
+    },
+    {
+      "path": "smart-locking-be.API\\Services\\DeliveryRequestExpirationWorker.cs",
+      "lines": 57,
+      "sha256": "d624c06c81da1010cf8182f9994aebc5f04c40339a2ecd10636426fd7a4ca0d3"
+    },
+    {
+      "path": "smart-locking-be.API\\Services\\LocalImageStorageService.cs",
+      "lines": 59,
+      "sha256": "9b333a27bed73fc4cb5d301866a1a8850401b51464946ce04738c86d0c56ab21"
+    },
+    {
+      "path": "smart-locking-be.API\\Services\\OverdueChargeWorker.cs",
+      "lines": 36,
+      "sha256": "ea8ffc7fcbc5d3aa6fe01f2688586e4e10f650dfb991a87b6c6bca5a02903d12"
+    },
+    {
+      "path": "smart-locking-be.API\\Services\\ParcelReminderWorker.cs",
+      "lines": 32,
+      "sha256": "6fa0d174daa2484b79a521a626dbbc466d8dcd6f43f12019050a51c119d8bc93"
+    },
+    {
+      "path": "smart-locking-be.API\\Services\\SignalROperationsRealtimeNotifier.cs",
+      "lines": 34,
+      "sha256": "7ecd9a097fc0f2eb839a6d4621dd1e560575a448683895c73d72ae8ddadbcc13"
+    },
+    {
+      "path": "smart-locking-be.API\\Services\\SubscriptionExpirationWorker.cs",
+      "lines": 22,
+      "sha256": "27fe9587e8bfd6275719d6404cb1d5b1bc16d590cf33bd7c65193d7821502baa"
+    },
+    {
+      "path": "docs\\superpowers\\plans\\2026-09-12-sdlms-code-first.md",
+      "lines": 215,
+      "sha256": "ae4e0844bfcd9d9d9afbee38111af88c6fd01d1a4510ec9766c0d44a3d3af776"
+    },
+    {
+      "path": "docs\\superpowers\\plans\\2026-10-12-subscription-and-overdue-handling.md",
+      "lines": 461,
+      "sha256": "ae76b83ba3f61979ec4de3a2dd377337fe075b2643e70f57dcac9fe8c2cb2d3e"
+    },
+    {
+      "path": "docs\\superpowers\\plans\\2026-10-13-supabase-image-storage.md",
+      "lines": 260,
+      "sha256": "7606b6db947b5e1cfb455ce295f8ef85324160939b5be2f921cb41a92c74eb1b"
+    },
+    {
+      "path": "docs\\superpowers\\specs\\2026-09-12-sdlms-code-first-design.md",
+      "lines": 64,
+      "sha256": "7cab3eb47a8c6b7106365b3c28b5dc70913e6b4412b277ba13ddad9c08a1a88d"
+    },
+    {
+      "path": ".github\\ISSUE_TEMPLATE\\bug_report.md",
+      "lines": 47,
+      "sha256": "47413266ba3c1b3b97b0c2f9b5f67bc696d57f58b97cfdf57b2af5a67d7068e1"
+    },
+    {
+      "path": ".github\\ISSUE_TEMPLATE\\feature_request.md",
+      "lines": 47,
+      "sha256": "14ea937ab4a3aba2d2053bc234233e8d1a406480d2aa31a46a16ea2f5a1f5451"
+    }
+  ],
+  "FE": [
+    {
+      "path": "README.md",
+      "lines": 257,
+      "sha256": "c7137cf44dd4a5e69f80a4c748b719dc8f61c45b0ee649701a78c74371c3f2f0"
+    },
+    {
+      "path": "README.vn.md",
+      "lines": 252,
+      "sha256": "153545cd8b9937f5dc92b4cabb914605f79224198b29f2b09551d3db6f399a38"
+    },
+    {
+      "path": "vite.config.ts",
+      "lines": 11,
+      "sha256": "ea444d384b32a4fb4e7daa4096279a04a12e7d36feeec7085c2bfaa96c8e3605"
+    },
+    {
+      "path": ".github\\pull_request_template.md",
+      "lines": 40,
+      "sha256": "71a50e7ff6d3a3c8a9dc21e3fc44ce4e05d008a11797a2607c7528c3d81fa920"
+    },
+    {
+      "path": "docs\\admin-user-management-api-contract.md",
+      "lines": 79,
+      "sha256": "a121b209ecaea02f8834edbc0c89a4f57f911fb8a5b9253e157d192ad28e728b"
+    },
+    {
+      "path": "docs\\admin-user-management-requirements.md",
+      "lines": 450,
+      "sha256": "30bb7b070a7617afe4e022243e7875e31412be7ef282bca6203a391a31de649a"
+    },
+    {
+      "path": "src\\App.tsx",
+      "lines": 116,
+      "sha256": "a4bc40e5779713f3106773e5c4b2f7ab2730a578f3676c27da45ae55681276c0"
+    },
+    {
+      "path": "src\\main.tsx",
+      "lines": 17,
+      "sha256": "92f5e27917b613fb870fb713cec1110d79dd2fbcb807a1b99380818fbdc6c9d5"
+    },
+    {
+      "path": "src\\provider.tsx",
+      "lines": 34,
+      "sha256": "585c1fdba62779b1f57edf1e18bd8b69d9b49b41cd684263043abef055a65d6a"
+    },
+    {
+      "path": "src\\vite-env.d.ts",
+      "lines": 9,
+      "sha256": "0209610c59ec3f55fc39c3f3ff52882a1ea8f608985acbf070c7dc3182087d3c"
+    },
+    {
+      "path": "src\\auth\\auth-context.tsx",
+      "lines": 212,
+      "sha256": "d43acbf269afcb5d5bf44ffc58fdb80501dd4117f64b9eafd46b21a018a5350e"
+    },
+    {
+      "path": "src\\auth\\auth-storage.ts",
+      "lines": 100,
+      "sha256": "1929c7d96584a4edeeec1eff95be1663485351229d4e2a2ed903c0d13494b852"
+    },
+    {
+      "path": "src\\auth\\route-guards.tsx",
+      "lines": 36,
+      "sha256": "bc41221bd14ce0f8adae7f2d26f3873e7528023284474e44b7f3cf88bd97d597"
+    },
+    {
+      "path": "src\\components\\icons.tsx",
+      "lines": 186,
+      "sha256": "8e625c37ae332ecb08c287789c217d98ca8d1f734a7e4f463084ac66a755fe2c"
+    },
+    {
+      "path": "src\\components\\navbar.tsx",
+      "lines": 170,
+      "sha256": "e8e142642259435668ab63b54888186b1e2c6aae070fb8d1d2ac87bcb16ea5af"
+    },
+    {
+      "path": "src\\components\\primitives.ts",
+      "lines": 53,
+      "sha256": "0ee0f339c1a63b131fc54c6ff55927d08d7941acb40fb80917fe5c3de03b5d4c"
+    },
+    {
+      "path": "src\\components\\theme-switch.tsx",
+      "lines": 38,
+      "sha256": "89cf72b41e8abfc33abf3d7e892f316656319914c0bcdb4123ea4436a4952519"
+    },
+    {
+      "path": "src\\config\\api.ts",
+      "lines": 9,
+      "sha256": "28800d45133a631a47c7f2921761108170aec3b6152e5f6dc899a3d732748974"
+    },
+    {
+      "path": "src\\config\\navigation.ts",
+      "lines": 109,
+      "sha256": "2f4ce7a462e31fbed30f08788a3a38f4726df9b49754ddb05948d94bea49fe62"
+    },
+    {
+      "path": "src\\config\\site.ts",
+      "lines": 69,
+      "sha256": "2c1984a71eb21a33db37850463b4fc323e4f769a950f7db57531c1b863bb214d"
+    },
+    {
+      "path": "src\\constants\\user-management.ts",
+      "lines": 80,
+      "sha256": "165a9b3a3757b9bb2864ab946f64600d54403b1ce78c42bc364a7745c8156a1d"
+    },
+    {
+      "path": "src\\layouts\\application-layout.tsx",
+      "lines": 27,
+      "sha256": "7e24c628ca463e80094a7e266b71f6fa56721583c6d188bb38bd597dd0e3b0e7"
+    },
+    {
+      "path": "src\\layouts\\default.tsx",
+      "lines": 27,
+      "sha256": "6155507a8a3fcbefe8b9d1443b458191412109a6877f2b3b6d480bfe091536d7"
+    },
+    {
+      "path": "src\\mocks\\auth.ts",
+      "lines": 21,
+      "sha256": "174e5bc751a7909150eb93774956b85e7ee6820328b2cb9ecfaea454899ac845"
+    },
+    {
+      "path": "src\\mocks\\user-management-data.ts",
+      "lines": 249,
+      "sha256": "7de5e1428c255aa8145361f9ac575444d0658c37e39050da065383ca4f443a15"
+    },
+    {
+      "path": "src\\mocks\\user-management-service.ts",
+      "lines": 773,
+      "sha256": "920ca38096b2d0c4db0e80ba0e8ab15c02cd695293de8c037c2bc21581009cca"
+    },
+    {
+      "path": "src\\pages\\about.tsx",
+      "lines": 14,
+      "sha256": "9cb55d868705544f978c4152623fa1f3e92eb3da0a43a3c629b639478fce7562"
+    },
+    {
+      "path": "src\\pages\\admin.tsx",
+      "lines": 3,
+      "sha256": "513980a36d9bfd476fdf7122209d48694ea5ace540698182c5c9fd20e20654f6"
+    },
+    {
+      "path": "src\\pages\\blog.tsx",
+      "lines": 14,
+      "sha256": "24296cbd685855aa5cc0268a8653efb1d19e6c215528d1ecd595ff018c8da2df"
+    },
+    {
+      "path": "src\\pages\\docs.tsx",
+      "lines": 14,
+      "sha256": "97d2e5dc322bd0c89791baa5179c1872219cbe436c74dc4ace50fca01a2409bb"
+    },
+    {
+      "path": "src\\pages\\empty-route.tsx",
+      "lines": 3,
+      "sha256": "02374200377852fe17a00ae80b0725524ddd583bfee9c3d4a20497f986047cf4"
+    },
+    {
+      "path": "src\\pages\\forbidden.tsx",
+      "lines": 45,
+      "sha256": "8be6a66b117ff66823abc62816c0093a629dbf8efc508400302284dab8737c9f"
+    },
+    {
+      "path": "src\\pages\\index.tsx",
+      "lines": 55,
+      "sha256": "61d227d8e4900531c9a0ba75779bd2a4ed8ff100d7b89d96a2c71c8cb82a1ee0"
+    },
+    {
+      "path": "src\\pages\\login.tsx",
+      "lines": 170,
+      "sha256": "47f5cde237281990f5bee45695ac39447784a95af02da8a7f3fe1f7a76871694"
+    },
+    {
+      "path": "src\\pages\\pricing.tsx",
+      "lines": 14,
+      "sha256": "57c1a76d1ccd2039786ab8c41abef3f16863745fb6b2dcee011a29d5d96c3369"
+    },
+    {
+      "path": "src\\services\\api-client.ts",
+      "lines": 247,
+      "sha256": "3a1b2b65e4d473a128aecb91ecfae49a3b356df3af7d8ed7f1ddf0d8d9991370"
+    },
+    {
+      "path": "src\\services\\auth-service.ts",
+      "lines": 60,
+      "sha256": "52ed8f73cd294da556463e91375a1d7b633bbe4bef479a3dedc500bb437310df"
+    },
+    {
+      "path": "src\\services\\operations-service.ts",
+      "lines": 116,
+      "sha256": "53507c7e09264942e8f55df5be2e2b6cf1db838b40195a8b442bc5e53fc08968"
+    },
+    {
+      "path": "src\\services\\user-management-query.ts",
+      "lines": 86,
+      "sha256": "dd5ee9177c5ef962a23a64dfab7fe3dc6773a74bc230bf854cb95f20354a654f"
+    },
+    {
+      "path": "src\\services\\user-management-requests.ts",
+      "lines": 164,
+      "sha256": "7e24f767d6b43e0fafeff40f805eec69d9be3cd36f87f8d834aee9d84ef333de"
+    },
+    {
+      "path": "src\\services\\user-management-service.ts",
+      "lines": 763,
+      "sha256": "ee3911e88b9c3a213fc4d5272d9793367a7b46b3e82f637aa959976d721a301f"
+    },
+    {
+      "path": "src\\types\\auth.ts",
+      "lines": 49,
+      "sha256": "086cc5f273ea85a06af9d20577df9df63d89897ec925c86cb1f2a0cb4af881b5"
+    },
+    {
+      "path": "src\\types\\index.ts",
+      "lines": 5,
+      "sha256": "92982a27a9161e9ca31733f28607fde9b90ebe47c4a411d4d47f473d07cd5701"
+    },
+    {
+      "path": "src\\types\\user-management-api.ts",
+      "lines": 75,
+      "sha256": "f9c2780a827512205b92a76448959257b3501e163ad957921b6493461e4cb844"
+    },
+    {
+      "path": "src\\types\\user-management.ts",
+      "lines": 236,
+      "sha256": "4c3f9f00abfa9302086ff34d48b8f92678a985544427abc912b5f0bdc7f36847"
+    },
+    {
+      "path": "src\\pages\\admin\\admin-data.ts",
+      "lines": 300,
+      "sha256": "8390f5e6f7a430d05af73fc90dfeb0e411b6135b70840eec43202e9d2fd898bc"
+    },
+    {
+      "path": "src\\pages\\admin\\audit-logs.tsx",
+      "lines": 81,
+      "sha256": "e128cb96159492dbaefaefa890e42ebf0f4b0028ca5a3c32795490add57c75e5"
+    },
+    {
+      "path": "src\\pages\\admin\\dashboard.tsx",
+      "lines": 464,
+      "sha256": "8d4d05bb8c0982739aec01118d031b4dce0441a4418446bc85486cac0f579613"
+    },
+    {
+      "path": "src\\pages\\admin\\lockers.tsx",
+      "lines": 622,
+      "sha256": "b61db16d6ea2d99ade158674fb3473e02b59fa612c845643598535aeb7ac84eb"
+    },
+    {
+      "path": "src\\pages\\admin\\reports.tsx",
+      "lines": 81,
+      "sha256": "9250226018e28e534d66de6305eaf7b27a313400cf5caedd039bef1209da077c"
+    },
+    {
+      "path": "src\\pages\\admin\\user-management-page.tsx",
+      "lines": 307,
+      "sha256": "f9b5bbaae04f024508cedc6e84335d60218553e7bfca7c2590dee1a928d019e7"
+    },
+    {
+      "path": "src\\pages\\operator\\dashboard.tsx",
+      "lines": 118,
+      "sha256": "793ec2440969863ceb529e0fcccad308164d4751a23545a71c90349dd4970adc"
+    },
+    {
+      "path": "src\\pages\\operator\\locker-detail.tsx",
+      "lines": 561,
+      "sha256": "cf7f590df729ad03e2ed333585d19654057f00dfe50678941a390eff1131d5d0"
+    },
+    {
+      "path": "src\\pages\\operator\\locker-shared.tsx",
+      "lines": 166,
+      "sha256": "231f569d07a63b019f4604422ba835f06fdb534dc6b95cae6aad38abda33dee2"
+    },
+    {
+      "path": "src\\pages\\operator\\lockers.tsx",
+      "lines": 234,
+      "sha256": "fa39181218d1865f24e5400849f477e86b0961e2a793aa4d50bac93a39779f85"
+    },
+    {
+      "path": "src\\pages\\operator\\maintenance.tsx",
+      "lines": 120,
+      "sha256": "b787d1559208210478ca510f00d47c5309f9d3ba9d89a5f39140ed98bebab3c8"
+    },
+    {
+      "path": "src\\pages\\operator\\overdue-clearance.tsx",
+      "lines": 617,
+      "sha256": "f11b0cb68db5a5c5e0b9af26dbdb7306fc957267586752e370c4706ba6c2a546"
+    },
+    {
+      "path": "src\\pages\\operator\\settings.tsx",
+      "lines": 259,
+      "sha256": "e4c2b57f148a069cf7be50ebfaf27fe3ab106bd7c7ca80b6c665cfaad2fad645"
+    },
+    {
+      "path": "src\\components\\navigation\\app-header.tsx",
+      "lines": 135,
+      "sha256": "3d2b8bdb5ac300c3d712bb3db3ed5006bb43c4651b6297608a785c3272ea3ae5"
+    },
+    {
+      "path": "src\\components\\navigation\\app-sidebar.tsx",
+      "lines": 195,
+      "sha256": "7b60ac384a4ea46c89b545dc71cf9ee20b49dc158a7389037c353bef12527d15"
+    },
+    {
+      "path": "src\\components\\react-bits\\shape-grid.tsx",
+      "lines": 495,
+      "sha256": "dbfca707a6eb349d3d72cdb37baa8ca5d775f26ba445f77d952bec6c4778ee79"
+    },
+    {
+      "path": "src\\components\\admin\\users\\account-status-modal.tsx",
+      "lines": 335,
+      "sha256": "5d52a3cc3752e4882272dd20360d54cd85d9fe713002d35cc9d8a6bef74824e1"
+    },
+    {
+      "path": "src\\components\\admin\\users\\create-operator-modal.tsx",
+      "lines": 734,
+      "sha256": "6ed2b7539ef5292e36bcdc77aea8c7ad135eb924ef6e94cb0e4e6eb48dae8e43"
+    },
+    {
+      "path": "src\\components\\admin\\users\\operator-locker-assignment-modal.tsx",
+      "lines": 507,
+      "sha256": "0939e94cd1499bad5828ea07f7cb3223a1e66e9f829b365ee8613ac839972496"
+    },
+    {
+      "path": "src\\components\\admin\\users\\user-detail-modal.tsx",
+      "lines": 329,
+      "sha256": "31f84c9f93cf8ce56c55555b9a60c414a8650c2e93467e0e211cbd753adffe2a"
+    },
+    {
+      "path": "src\\components\\admin\\users\\user-management-toolbar.tsx",
+      "lines": 98,
+      "sha256": "8dd58676479cdbc35e92523da8cbdfbdd414eac633641920eb026612c12af72d"
+    },
+    {
+      "path": "src\\components\\admin\\users\\user-table.tsx",
+      "lines": 587,
+      "sha256": "5e5b656a734f5a73e927cec472b902f04ad65c96924546456729d55f36637608"
+    },
+    {
+      "path": ".github\\ISSUE_TEMPLATE\\bug_report.md",
+      "lines": 47,
+      "sha256": "036ba7cdc6140e7dea27dfec0d3c09f1b36b7c6d2e5abe8e8e9e65afa10c3d00"
+    },
+    {
+      "path": ".github\\ISSUE_TEMPLATE\\feature_request.md",
+      "lines": 41,
+      "sha256": "451933a7fe9184dc80cce34ab28bcd27e8a9adaf5685fd7dad2220b0e574fba0"
+    }
+  ],
+  "Mobile": [
+    {
+      "path": "README.md",
+      "lines": 318,
+      "sha256": "9451cefbdc9eddbf4dd78d46b0879a4e26d5b4014c038b4aaffa899881239834"
+    },
+    {
+      "path": "README.vn.md",
+      "lines": 318,
+      "sha256": "2b697f117e31e128e0b871a1a1826482cd35120f543733068de91a8fb2ee626d"
+    },
+    {
+      "path": "uniwind-env.d.ts",
+      "lines": 1,
+      "sha256": "5c1e1b07fe83c8c5cc039dfe0eb9306a3d44d540efd24485c715232de18b4ee4"
+    },
+    {
+      "path": ".github\\PULL_REQUEST_TEMPLATE.md",
+      "lines": 41,
+      "sha256": "94320934bd945026e41502856cda9e7c6f74c8bec753f652ae1ae3cf95f8da45"
+    },
+    {
+      "path": "src\\app\\_layout.tsx",
+      "lines": 38,
+      "sha256": "ebec5a44500adba60981a69cd9d4f7d5380a9ebfec2a373f76037c30ecf7e20c"
+    },
+    {
+      "path": "src\\components\\resident-tab-scaffold.tsx",
+      "lines": 59,
+      "sha256": "59ae41365dbd2727359d0b6911a70e84f3feeaeaaa15f66cd3f1630de6b30588"
+    },
+    {
+      "path": "src\\config\\env.ts",
+      "lines": 5,
+      "sha256": "96a46ea22bafaf70dd138d1e4bef41cd81598976df3127d1dd647c98c26058a6"
+    },
+    {
+      "path": "src\\lib\\api-client.ts",
+      "lines": 107,
+      "sha256": "e136ae428cacfd82c625ee60b002bffb92de86d307485a056c2114e2f77d3f0b"
+    },
+    {
+      "path": "src\\types\\env.d.ts",
+      "lines": 6,
+      "sha256": "820ce5cb91683447aca4a54c866670658c0f8c0cde2c2c418697697dd8518c7c"
+    },
+    {
+      "path": "src\\types\\styles.d.ts",
+      "lines": 1,
+      "sha256": "35d26ea66c86da9701e4f4b467913481ffeae910761cea34c775c5dacb7f8eaa"
+    },
+    {
+      "path": "src\\features\\account-packages\\account-package-screen.tsx",
+      "lines": 342,
+      "sha256": "b240031208e60625e5cff4205d7dda50476ab661503507b8f7111ceb6d18a20d"
+    },
+    {
+      "path": "src\\features\\account-packages\\api.ts",
+      "lines": 22,
+      "sha256": "c7dbfb3b70dce1fad3bc8c078529203a83d266f533c242608a05e9c390b2b513"
+    },
+    {
+      "path": "src\\features\\account-packages\\package-picker.tsx",
+      "lines": 107,
+      "sha256": "83a2a1c0355394b50bc35b4d2840ac23c49d75f4228d1d411da7adc44662b985"
+    },
+    {
+      "path": "src\\features\\account-packages\\storage.ts",
+      "lines": 44,
+      "sha256": "bc0090af4beb2ef3c99e73d9610b86cc1cf165d96c7dd3ee0fe78f20cafc931e"
+    },
+    {
+      "path": "src\\features\\account-packages\\types.ts",
+      "lines": 29,
+      "sha256": "7a52d7339ceb23de48d955df338954d056df9b836f9f32f0013282c2d2f8a499"
+    },
+    {
+      "path": "src\\features\\account-packages\\use-package-plans.ts",
+      "lines": 48,
+      "sha256": "f7c2473cf9c24485a7f1e8262fc3a96b7c9a69d929fb5bf33d7d72e7ff4fae1c"
+    },
+    {
+      "path": "src\\features\\auth\\api.ts",
+      "lines": 49,
+      "sha256": "09c3267bf460630dbf4774f88a20ff2755727bb51932fd89e623df1065531a41"
+    },
+    {
+      "path": "src\\features\\auth\\auth-context.tsx",
+      "lines": 103,
+      "sha256": "06e178ca6300b258a6fa81408e01acc0367ce60f9874ed18324d783bcb370780"
+    },
+    {
+      "path": "src\\features\\auth\\screens.tsx",
+      "lines": 502,
+      "sha256": "d6eadd2980af49029c0ca02fcd8236dacf45d0a7a6e58fe4b6d7fca91667d597"
+    },
+    {
+      "path": "src\\features\\auth\\storage.ts",
+      "lines": 27,
+      "sha256": "d2f254675f7fa1bbb66e92dce9bc0fcaeee2f9e72e8f5e386222c091f3b98cb8"
+    },
+    {
+      "path": "src\\features\\auth\\types.ts",
+      "lines": 32,
+      "sha256": "209f4b57d996fca8e922c43cac63e2f800082020420539f43c6422829aff6bbd"
+    },
+    {
+      "path": "src\\features\\delivery-requests\\api.ts",
+      "lines": 25,
+      "sha256": "f357150dd405f972a9d0955afeb82dd72bbc16f2ad23ed5db6a2cd02c1124498"
+    },
+    {
+      "path": "src\\features\\delivery-requests\\countdown.ts",
+      "lines": 6,
+      "sha256": "d8f9f57cec2719d37291eb9eeb172bba522052c6dc0a77b86020959686e2160c"
+    },
+    {
+      "path": "src\\features\\delivery-requests\\delivery-request-detail-screen.tsx",
+      "lines": 172,
+      "sha256": "2bc6edeae437ebbc76ce1fdffcc73b48db1e7042366defc5d7415e1d3138d5d4"
+    },
+    {
+      "path": "src\\features\\delivery-requests\\delivery-request-list-screen.tsx",
+      "lines": 183,
+      "sha256": "b187aa80eced9f7dc781274dc3f7ebfad493ac564436394c8ffa5104967a9191"
+    },
+    {
+      "path": "src\\features\\delivery-requests\\types.ts",
+      "lines": 20,
+      "sha256": "897499116e5f759e9b2dff40d4100df28755e9226840efdafe116be09119dba3"
+    },
+    {
+      "path": "src\\features\\incidents\\api.ts",
+      "lines": 10,
+      "sha256": "6875da672d25274630cc2b7d538d3aeb2fe84cf6a7626925c31c88e37b7d0aff"
+    },
+    {
+      "path": "src\\features\\navigation\\placeholder-screen.tsx",
+      "lines": 23,
+      "sha256": "3b02ebf90844927e88bba4b89d82b7afb57c38a70200244167636ec93dbd33c4"
+    },
+    {
+      "path": "src\\features\\notifications\\api.ts",
+      "lines": 32,
+      "sha256": "38f6331b754aaf1ba6cc0c0916e5a9b9dbc46570b6d0b6f38196a74836967c0a"
+    },
+    {
+      "path": "src\\features\\notifications\\data-sync.ts",
+      "lines": 20,
+      "sha256": "bb09a50cdf22d9fc35f5ebe54f2e76767bf1a9a15f4fb65e05211c6b361ff617"
+    },
+    {
+      "path": "src\\features\\notifications\\navigation.ts",
+      "lines": 34,
+      "sha256": "2646b08dede85e3c2d16e9e6f4db477545fb1d3b1be79a7ffb89d9cdba13b58f"
+    },
+    {
+      "path": "src\\features\\notifications\\notification-bridge.tsx",
+      "lines": 53,
+      "sha256": "19ac563bd01dfc39999b0d4fcf20f7deb92e461b5058e71f40d251e2ab56a03f"
+    },
+    {
+      "path": "src\\features\\notifications\\notification-list-screen.tsx",
+      "lines": 162,
+      "sha256": "817599d0af20ad628bd4408cf8d3c2bc92152f4d64cad5f6b740490dec3510be"
+    },
+    {
+      "path": "src\\features\\notifications\\push.ts",
+      "lines": 65,
+      "sha256": "09a8d0678dfacfaa77a15c1d9c365259de0f2d94e8f23a6cc61ed927590aa950"
+    },
+    {
+      "path": "src\\features\\notifications\\types.ts",
+      "lines": 19,
+      "sha256": "5a7399111f209db18dcfe90034544f4061496950514625fe694f012b0b29f7fe"
+    },
+    {
+      "path": "src\\features\\parcels\\api.ts",
+      "lines": 34,
+      "sha256": "d1928eb4191967e7f4943ea7b57f9ae82d0d9f8fc0b806b8cc5a598a245210a5"
+    },
+    {
+      "path": "src\\features\\parcels\\parcel-detail-screen.tsx",
+      "lines": 190,
+      "sha256": "36bdb18c479f042d3af83295f3635f2e3780cf55c591d2ab2bcc1bf6d77619e7"
+    },
+    {
+      "path": "src\\features\\parcels\\parcel-history-screen.tsx",
+      "lines": 175,
+      "sha256": "31aa9090460c9157a9cbe6904fe2b4089fd129caa6e6c939cf582c9af5f57955"
+    },
+    {
+      "path": "src\\features\\parcels\\resident-home-screen.tsx",
+      "lines": 225,
+      "sha256": "46dfe847cefac88ea3bb5364cd51910316fe9c99b7acf01c271573663344d12f"
+    },
+    {
+      "path": "src\\features\\parcels\\types.ts",
+      "lines": 42,
+      "sha256": "810e9ffbef446e60aaa5dc44b020902a768bb962c3b8d8d08dfe05801f2c52ce"
+    },
+    {
+      "path": "src\\features\\payments\\api.ts",
+      "lines": 12,
+      "sha256": "67e8313c2408642b9838a2b77660688e3f854418627521d70f9bae41549a28b6"
+    },
+    {
+      "path": "src\\features\\payments\\types.ts",
+      "lines": 13,
+      "sha256": "c108a68b1478c8f9f8ad222feef5af68dc475b64265dd24b562a4c13467a0d81"
+    },
+    {
+      "path": "src\\features\\returns\\api.ts",
+      "lines": 17,
+      "sha256": "1926ab9dc755bf14f0bb3695fe0a9835cf09bfefbb5a5930ac9cc946e26cc7b7"
+    },
+    {
+      "path": "src\\features\\returns\\return-list-screen.tsx",
+      "lines": 138,
+      "sha256": "13cebb821def4f86a413bb7dd89e575d71ce433393018aabd5a0a4d12c215541"
+    },
+    {
+      "path": "src\\features\\returns\\types.ts",
+      "lines": 7,
+      "sha256": "2f4aba0f386075974dbcec7991154e3d306a947f93e0183a54b1554c569e9ef8"
+    },
+    {
+      "path": "src\\components\\auth\\auth-field.tsx",
+      "lines": 46,
+      "sha256": "a2712bff03bbef56864c38c5c848d75a5a487de35431233bbd00444042286a5e"
+    },
+    {
+      "path": "src\\components\\auth\\auth-screen.tsx",
+      "lines": 70,
+      "sha256": "f73b9be4893b30dd9758d4cb989dafdf0b9202056c19d2d1821a88598bd8ca5d"
+    },
+    {
+      "path": "src\\components\\auth\\boxora-logo.tsx",
+      "lines": 33,
+      "sha256": "00e381d2d20fc5f16c93937ca9498ff3c6605a94de4b682d1a54d0a00d7a0dfb"
+    },
+    {
+      "path": "src\\components\\icons\\gravity-icon.tsx",
+      "lines": 135,
+      "sha256": "76f2fb759f750fba9374905672f327c26d1bc014e0f343f477d93d7de51ef2ee"
+    },
+    {
+      "path": "src\\components\\ui\\app-screen.tsx",
+      "lines": 10,
+      "sha256": "67fc88af942a73f7b4e4c508254ee31162d76bae8447c318cb83d4eb40316724"
+    },
+    {
+      "path": "src\\components\\ui\\resident-ui.tsx",
+      "lines": 95,
+      "sha256": "c302036a30dd05adbe238b308385d53c2e12ddda5caa93cae85a8dec6d937d82"
+    },
+    {
+      "path": "src\\components\\ui\\status-badge.tsx",
+      "lines": 18,
+      "sha256": "34ec5541ffc92407d0a6adb8970956b86a1ea1dae8c8d1b10064c01264d58b13"
+    },
+    {
+      "path": "src\\components\\ui\\themed-safe-area-view.tsx",
+      "lines": 19,
+      "sha256": "26508e64c6b7ea14e7562ed8f1dcea76d6d59be1ec1c6df86244af94929571fa"
+    },
+    {
+      "path": "src\\app\\(auth)\\forgot-password.tsx",
+      "lines": 1,
+      "sha256": "f9bd0e3c9d04cb579f0e860621a07287907479bfddc7ca91d919210d863dcf6b"
+    },
+    {
+      "path": "src\\app\\(auth)\\login.tsx",
+      "lines": 1,
+      "sha256": "66c5349187fdc4ed7c204693052df499f2a87abc0fb96fb4be5f6879ae479afc"
+    },
+    {
+      "path": "src\\app\\(auth)\\register.tsx",
+      "lines": 1,
+      "sha256": "02ea7698a65150b43a047a3855bd675f572cbc853f290a7b49024fbbe95d2d3e"
+    },
+    {
+      "path": "src\\app\\(auth)\\reset-password.tsx",
+      "lines": 1,
+      "sha256": "b504dd026fa88a35fcfe78083c21cdde6821e1200950d852cf6d6d9d7e7ce356"
+    },
+    {
+      "path": "src\\app\\(auth)\\verify-otp.tsx",
+      "lines": 1,
+      "sha256": "5430f297104a178f42abd488cab7018d035a7d2f97f011c2b4c9c9f850b9e990"
+    },
+    {
+      "path": "src\\app\\(auth)\\welcome.tsx",
+      "lines": 1,
+      "sha256": "7b4609ec04fc7a2322c7ebb1b7bd60183cc0efe4f9392c75663436f3a0260403"
+    },
+    {
+      "path": "src\\app\\(auth)\\_layout.tsx",
+      "lines": 10,
+      "sha256": "0804a8de6ca60662f2489140fe76655f9ec8d26062a5af08d5170e897059837d"
+    },
+    {
+      "path": "src\\app\\(resident)\\account-package.tsx",
+      "lines": 1,
+      "sha256": "df1d085edc2387b372ff6876302386ff5e62ed74860e453a3f8a379acb537ae2"
+    },
+    {
+      "path": "src\\app\\(resident)\\notifications.tsx",
+      "lines": 5,
+      "sha256": "b56f04bdb4db2682eb097b9f6db633670191ebccd77cba5b85121153de21dfa5"
+    },
+    {
+      "path": "src\\app\\(resident)\\personal-qr.tsx",
+      "lines": 12,
+      "sha256": "c05fcba4794dfd376985f9bffddad810bd76481bbd0344272f444e78f2a72394"
+    },
+    {
+      "path": "src\\app\\(resident)\\requests.tsx",
+      "lines": 7,
+      "sha256": "e3b170992f0891f8a558b283120d970c1a58dfdd352a22d82e2b1a0f851db452"
+    },
+    {
+      "path": "src\\app\\(resident)\\settings.tsx",
+      "lines": 92,
+      "sha256": "b2ee41a024d702a8c38cf3fc3e9afe66175b33b06e22f9d90f48ed6c25720207"
+    },
+    {
+      "path": "src\\app\\(resident)\\_layout.tsx",
+      "lines": 19,
+      "sha256": "fdcc4f119959d05cae1fc4a68c0b5e6dc387cb1068d4c085a18bf56d4e2b02e6"
+    },
+    {
+      "path": "src\\app\\(resident)\\(tabs)\\history.tsx",
+      "lines": 6,
+      "sha256": "0ca359d82665df4ee80167b93a6285baa1452ef222521133e2be9d3a8637ee01"
+    },
+    {
+      "path": "src\\app\\(resident)\\(tabs)\\index.tsx",
+      "lines": 6,
+      "sha256": "51b1741f3e21b24f485ef84ddb627ae0f16c86c92a57f61f98e86c079e50aafe"
+    },
+    {
+      "path": "src\\app\\(resident)\\(tabs)\\profile.tsx",
+      "lines": 184,
+      "sha256": "abadb4b3f3b64c26d926e4a808fb5b929389df17d14e164e55a111bf430ea247"
+    },
+    {
+      "path": "src\\app\\(resident)\\(tabs)\\send.tsx",
+      "lines": 5,
+      "sha256": "ea874bcceb47af1208735ee08d6b4a2c8c2346deb667d73616b906aa0b0719cc"
+    },
+    {
+      "path": "src\\app\\(resident)\\(tabs)\\_layout.tsx",
+      "lines": 16,
+      "sha256": "d893c5d166edc6e41b414f7a699c979c3b530bdb433936f6a9d3c523b54f0165"
+    },
+    {
+      "path": "src\\app\\(resident)\\delivery-requests\\[id].tsx",
+      "lines": 9,
+      "sha256": "85ba6222b6b9505aa94236ea5a5bc91fe725ee4add00b6c4ffc50e08341866cd"
+    },
+    {
+      "path": "src\\app\\(resident)\\incidents\\index.tsx",
+      "lines": 83,
+      "sha256": "98f0e36726648daadea83dfadc7f8997305e494934e4bcf808c30ee2f9da6858"
+    },
+    {
+      "path": "src\\app\\(resident)\\incidents\\new.tsx",
+      "lines": 156,
+      "sha256": "5b91e37993e41669426443106af7dbca985aa7f3fa19aa01fd75c4a3d870d697"
+    },
+    {
+      "path": "src\\app\\(resident)\\incidents\\[id].tsx",
+      "lines": 119,
+      "sha256": "bf0c483449f6e4c3c74be202b079d04c3d2cbd3abd54f7381ea6252a6d97ebb3"
+    },
+    {
+      "path": "src\\app\\(resident)\\parcels\\[id].tsx",
+      "lines": 7,
+      "sha256": "3a7dc4ee9c60bccc0b1a4adba0b485848b169f1b0f13c9bbb01f06124d82b759"
+    },
+    {
+      "path": "src\\app\\(resident)\\payment\\[parcelId].tsx",
+      "lines": 101,
+      "sha256": "57122b2c7bdd2e9ec6723e7fca617407280e7db338a7f09986d979e964ebffcc"
+    },
+    {
+      "path": "src\\app\\(resident)\\payments\\index.tsx",
+      "lines": 25,
+      "sha256": "dcb3ddeacef814604c241b2012582c997b8381d8dcb47cdc2a917d70f3a3459c"
+    },
+    {
+      "path": "src\\app\\(resident)\\payments\\[id].tsx",
+      "lines": 92,
+      "sha256": "2c9bdeccf7bc28261536c2b7bf90ff8dce4f7886274c28e5c2a365078ef0c5a2"
+    },
+    {
+      "path": "src\\app\\(resident)\\retrieval\\[parcelId].tsx",
+      "lines": 187,
+      "sha256": "27453c2fe5075f3bf27b54c09db8672a24cec262ddbee22442593c94b60d0b8a"
+    },
+    {
+      "path": "src\\app\\(resident)\\returns\\index.tsx",
+      "lines": 5,
+      "sha256": "cbb6e26b98ec3e5863f0e2a03af66e44b8720e3bf64b165cdb89fa372bca7a3c"
+    },
+    {
+      "path": "src\\app\\(resident)\\returns\\new.tsx",
+      "lines": 102,
+      "sha256": "100c28339ee3d22bad08cb18408eac1b2509d84eeb75dcc59fda44adb6638c43"
+    },
+    {
+      "path": "src\\app\\(resident)\\returns\\[id].tsx",
+      "lines": 174,
+      "sha256": "1b1b40146b4747c9d80de2e91c482b90aba22c28c8c3d89f9c8148698682aa1d"
+    },
+    {
+      "path": ".github\\ISSUE_TEMPLATE\\bug_report.md",
+      "lines": 57,
+      "sha256": "c61bfebc76afde63947496739d0fe83b5cb39dc376775fd8e220f21428365cc9"
+    },
+    {
+      "path": ".github\\ISSUE_TEMPLATE\\feature_request.md",
+      "lines": 55,
+      "sha256": "407705fa740b7fc188224c1214c88ccc96146b5b5e8a7aa913003724bc63c839"
+    }
+  ]
+}

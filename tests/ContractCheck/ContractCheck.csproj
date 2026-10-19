@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(BackendRoot)/smart-locking-be.Infrastructure/Services/BluetoothProtocol.cs" Link="BackendCodec.cs" />
+    <Compile Include="$(BackendRoot)/smart-locking-be.Application/Interfaces/Services/IBluetoothMessageCodec.cs" Link="BackendCodecInterface.cs" />
+    <Compile Include="$(BackendRoot)/smart-locking-be.Application/DTOs/Lockers/OfflinePinDtos.cs" Link="BackendOfflineDtos.cs" />
+  </ItemGroup>
+</Project>
