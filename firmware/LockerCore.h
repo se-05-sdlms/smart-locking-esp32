@@ -19,7 +19,7 @@ struct State {
   char commands[CommandSlots][33]{};
 };
 enum class LoadResult { Fresh, Loaded, Fault };
-enum class InputKind : uint8_t { Ble, Workflow, Inventory, Pin, Ack, Remote, Legacy };
+enum class InputKind : uint8_t { Ble, Workflow, Inventory, Pin, Ack, Remote, Legacy, Reset };
 struct Input {
   InputKind kind;
   uint8_t channel = 0;
@@ -76,6 +76,7 @@ private:
   std::string newId();
   std::string newPin();
   std::string workflow(Text command);
+  std::string resetCompartment(Text command);
   std::string offlineReturn(Text body);
   std::string pickup(Text pin);
   std::string wrongPin();

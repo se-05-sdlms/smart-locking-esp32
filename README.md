@@ -47,3 +47,7 @@ Bộ nhớ dùng namespace mới `locker_core_v1`. Trước khi triển khai và
 Cần .NET 8 và g++ C++17 (script nhận đường dẫn qua `-Compiler`). Tests dùng core và adapter production với GPIO/NVS giả lập; không mở relay thật hoặc gửi lệnh lên broker. Source BE chỉ được link để kiểm tra codec, không sửa file BE.
 
 Đọc [báo cáo phân tích và kết quả](docs/FIRMWARE_REBUILD.md) để xem hợp đồng, vai trò từng file, kết quả kiểm tra và các giới hạn chưa thể giải quyết chỉ bằng firmware, đặc biệt phí offline và tích hợp client. Không coi compile/native test là nghiệm thu board thật.
+
+## Đặt lại trạng thái ngăn
+
+Firmware hỗ trợ lệnh `z1` qua MQTT và `RESET:z1|...` qua BLE, phản hồi `z2` qua BLE/MQTT `events/state-reset`. Lệnh kiểm tra đúng giao dịch, không kích relay; chỉ xóa PIN/trạng thái của ngăn chỉ định sau khi lưu NVS thành công. Nhật ký chưa được BE tiếp nhận chặn reset. Không đổi cấu trúc NVS, không xóa ngăn khác hay bộ đếm thứ tự. Trang quản trị test tại `http://localhost:8765/maintenance.html`; cần nạp bản firmware này trước khi sử dụng.

@@ -62,14 +62,22 @@ public:
 LockerCore *core = nullptr;
 bool started = false;
 std::string deviceIdentifier() {
-  if (CUSTOM_DEVICE_ID && *CUSTOM_DEVICE_ID)
-    return CUSTOM_DEVICE_ID;
+  // Dùng MAC thật để chọn đúng tài khoản; không cho cấu hình đổi danh tính board.
   uint8_t mac[6]{};
   if (esp_read_mac(mac, ESP_MAC_WIFI_STA) != ESP_OK)
     return "";
   char id[12];
   snprintf(id, sizeof(id), "LKR-%02X%02X%02X", mac[3], mac[4], mac[5]);
   return id;
+}
+const MqttDeviceAccount *mqttAccountForDevice(const std::string &id) {
+  const std::string expectedUsername = "esp_" + id;
+  for (const auto &account : MQTT_DEVICE_ACCOUNTS) {
+    if (account.deviceIdentifier && id == account.deviceIdentifier && account.username &&
+        expectedUsername == account.username && account.password && *account.password)
+      return &account;
+  }
+  return nullptr;
 }
 } // namespace
 void setup() {
@@ -80,13 +88,21 @@ void setup() {
     Serial.println("[BOOT] Device ID khong hop le; khong nhan lenh.");
     return;
   }
+  // Không dùng tài khoản của tủ khác khi secrets.h thiếu cấu hình cho board này.
+  const auto *account = mqttAccountForDevice(id);
+  if (!account) {
+    Serial.printf("[BOOT] Khong co tai khoan MQTT hop le cho %s; kiem tra secrets.h.\n",
+                  id.c_str());
+    return;
+  }
+  Serial.printf("[MQTT] Device=%s username=%s\n", id.c_str(), account->username);
   static LockerCore engine(runtime, id);
   core = &engine;
   core->begin();
   Serial.printf("[BOOT] id=%s NVS=%s\n", id.c_str(),
                 core->ready() ? "READY" : "FAULT (giu nguyen du lieu)");
   Credentials credentials{WIFI_SSID, WIFI_PASSWORD, MQTT_SERVER, static_cast<uint16_t>(MQTT_PORT),
-                          MQTT_USER, MQTT_PASS};
+                          account->username, account->password};
   started = transports.begin(id, credentials);
   Serial.printf("[BOOT] BLE/network=%s heap=%u maxBlock=%u\n", started ? "READY" : "FAULT",
                 ESP.getFreeHeap(), ESP.getMaxAllocHeap());

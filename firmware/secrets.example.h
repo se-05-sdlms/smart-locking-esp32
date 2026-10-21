@@ -4,6 +4,14 @@ const char *WIFI_SSID = "";
 const char *WIFI_PASSWORD = "";
 const char *MQTT_SERVER = "";
 const int MQTT_PORT = 8883;
-const char *MQTT_USER = "";
-const char *MQTT_PASS = "";
-const char *CUSTOM_DEVICE_ID = "";
+// Cùng sketch nạp cho cả hai board: firmware đọc MAC thật để chọn đúng dòng.
+// Điền mật khẩu thật chỉ trong secrets.h; không cấu hình tài khoản BE tại đây.
+struct MqttDeviceAccount {
+  const char *deviceIdentifier;
+  const char *username;
+  const char *password;
+};
+const MqttDeviceAccount MQTT_DEVICE_ACCOUNTS[] = {
+    {"LKR-309228", "esp_LKR-309228", ""},
+    {"LKR-1A0844", "esp_LKR-1A0844", ""},
+};

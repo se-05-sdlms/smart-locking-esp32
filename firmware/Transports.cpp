@@ -135,7 +135,11 @@ void Transports::inbound(Text topic, Text payload) {
     if (!number(suffix.substr(6), channel) || channel < 1 || channel > Channels)
       return;
     input.channel = channel;
-    if (payload.substr(0, 3) == "c1|") {
+    if (payload.substr(0, 3) == "z1|") {
+      Text fields[7]; uint64_t target;
+      if (!split(payload, '|', fields, 7) || !number(fields[3], target) || target != channel) return;
+      input.kind = InputKind::Reset;
+    } else if (payload.substr(0, 3) == "c1|") {
       Workflow w;
       if (!parseWorkflow(payload, device_, w) || w.channel != channel)
         return;

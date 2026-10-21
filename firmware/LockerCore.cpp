@@ -193,6 +193,50 @@ std::string LockerCore::workflow(Text payload) {
   }
   return "WORKFLOW_OK:" + std::to_string(w.channel) + ":" + std::string(w.subject) + ":" + pin;
 }
+// Chỉ xóa trạng thái của đúng giao dịch; tuyệt đối không kích relay khi đặt lại.
+std::string LockerCore::resetCompartment(Text payload) {
+  Text f[7]; uint64_t channel, expiry;
+  if (!split(payload, '|', f, 7) || f[0] != "z1" || !hexId(f[1]) || f[2] != device_ ||
+      !number(f[3], channel) || channel < 1 || channel > Channels || !hexId(f[4]) || !number(f[5], expiry) || expiry > INT64_MAX)
+    return "FAIL:RESET_COMMAND";
+  unsigned index = channel - 1;
+  auto proof = [&](Text result) {
+    return "z2|" + std::string(f[1]) + "|" + device_ + "|" + std::to_string(channel) + "|" + std::string(f[4]) + "|" +
+      (io_.door(index) < 0 ? "UNKNOWN" : io_.closed(index) ? "CLOSED" : "OPEN") + "|" + std::string(result);
+  };
+  if (!ready_) return proof("FAIL_STORAGE");
+  if (!io_.utc() || io_.utc() >= expiry) return proof("FAIL_EXPIRED_OR_CLOCK");
+  auto &current = state_.compartments[index];
+  if ((current.phase != Phase::Empty && f[4] != current.subject) ||
+      (current.phase == Phase::Empty && current.consumed[0] && f[4] != current.consumed)) return proof("FAIL_WRONG_TRANSACTION");
+  if (active(current.phase) && io_.monotonic() - current.started < RelayMicros / 1000) return proof("FAIL_RELAY_BUSY");
+  Text acknowledged[2]; unsigned count = 0;
+  if (f[6] != "-") {
+    size_t start = 0;
+    for (;;) {
+      size_t end = f[6].find(',', start);
+      Text value = f[6].substr(start, end == Text::npos ? Text::npos : end - start);
+      if (count >= 2 || !hexId(value)) return proof("FAIL_ACK_LIST");
+      acknowledged[count++] = value;
+      if (end == Text::npos) break;
+      start = end + 1;
+    }
+  }
+  for (const auto &event : state_.journal) {
+    if (!event.id[0] || event.channel != channel) continue;
+    bool known = false;
+    for (unsigned j = 0; j < count; ++j) if (acknowledged[j] == event.id) known = true;
+    // Không mất lịch sử chưa được BE tiếp nhận và không xóa nhật ký của lượt khác.
+    if (f[4] != event.subject || !known) return proof("FAIL_SYNC_REQUIRED");
+  }
+  State before = state_;
+  for (auto &event : state_.journal) if (event.id[0] && event.channel == channel && f[4] == event.subject) event = Record{};
+  current = Compartment{};
+  copyText(current.consumed, sizeof(current.consumed), f[4]);
+  state_.inventoryMask &= ~(1u << index);
+  if (!persist()) { state_ = before; return proof("FAIL_STORAGE"); }
+  return proof("OK");
+}
 std::string LockerCore::offlineReturn(Text body) {
   Text f[2];
   std::string phone;
@@ -345,6 +389,13 @@ void LockerCore::ble(Text frame) {
     io_.respond(id, "FAIL:NOT_CONFIGURED_OR_STORAGE");
     return;
   }
+  if (body.substr(0, 6) == "RESET:") {
+    std::string result = resetCompartment(body.substr(6));
+    io_.respond(id, result);
+    // Nếu web ngắt sau khi ESP đã lưu, MQTT vẫn có thể chuyển kết quả về BE.
+    if (result.substr(0, 3) == "z2|") io_.publish("events/state-reset", result);
+    return;
+  }
   if (body.substr(0, 4) == "ACK:") {
     io_.respond(id, acknowledge(body.substr(4)) ? "ACKED" : "FAIL:ACK");
     return;
@@ -420,6 +471,11 @@ void LockerCore::handle(const Input &input) {
   if (!ready_ || !printable(body))
     return;
   switch (input.kind) {
+  case InputKind::Reset: {
+    std::string result = resetCompartment(body);
+    if (result.substr(0, 3) == "z2|") io_.publish("events/state-reset", result);
+    break;
+  }
   case InputKind::Workflow:
     workflow(body);
     break;
