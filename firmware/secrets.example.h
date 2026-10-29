@@ -10,8 +10,9 @@ struct MqttDeviceAccount {
   const char *deviceIdentifier;
   const char *username;
   const char *password;
+  const char *commandSigningKeyHex; // 32 byte ngẫu nhiên dạng 64 ký tự hex, khớp cấu hình BE của tủ.
 };
 const MqttDeviceAccount MQTT_DEVICE_ACCOUNTS[] = {
-    {"LKR-309228", "esp_LKR-309228", ""},
-    {"LKR-1A0844", "esp_LKR-1A0844", ""},
+    {"LKR-309228", "esp_LKR-309228", "", ""},
+    {"LKR-1A0844", "esp_LKR-1A0844", "", ""},
 };

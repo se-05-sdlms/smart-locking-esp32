@@ -1,6 +1,8 @@
 #include "LockerCore.h"
 #include "QueuePump.h"
 #include "StateStore.h"
+#include "BluetoothCommand.h"
+#include <openssl/hmac.h>
 #include <algorithm>
 #include <cstring>
 #include <deque>
@@ -66,6 +68,7 @@ struct Fake : Ports {
   bool connected() const override {
     return online;
   }
+  Text commandSigningKey() const override { return "1111111111111111111111111111111111111111111111111111111111111111"; }
   uint32_t connectionGeneration() const override {
     return generation;
   }
@@ -91,7 +94,18 @@ void input(LockerCore &c, InputKind kind, const std::string &payload, unsigned c
 }
 std::string ble(LockerCore &c, Fake &f, const std::string &body) {
   f.response.clear();
-  input(c, InputKind::Ble, "1|" + body);
+  std::string frame = body;
+  const size_t prefix = body.substr(0, 5) == "EXEC:" ? 5 : body.substr(0, 6) == "RESET:" ? 6 : 0;
+  if (prefix && body.substr(prefix, 3) != "b2|") {
+    unsigned char key[32], tag[32]; std::fill_n(key, 32, 0x11); unsigned size = 0;
+    const std::string message = "boxora-ble-v2|" + body.substr(prefix);
+    HMAC(EVP_sha256(), key, 32, reinterpret_cast<const unsigned char *>(message.data()), message.size(), tag, &size);
+    std::string signature;
+    const char *hex = "0123456789abcdef";
+    for (unsigned i=0;i<size;++i) {signature += hex[tag[i] >> 4];signature += hex[tag[i] & 15];}
+    frame = body.substr(0,prefix) + "b2|" + signature + "|" + body.substr(prefix);
+  }
+  input(c, InputKind::Ble, "1|" + frame);
   return f.response;
 }
 std::string command(char kind, const std::string &subject = Subject, unsigned channel = 1,
@@ -214,13 +228,13 @@ void workflowTests() {
   input(c, InputKind::Ack, ack);
   input(c, InputKind::Ack, ack);
   check(!c.state().journal[0].id[0], "idempotent ACK");
-  check(ble(c, f, "PICKUP:" + pin).find("PICKUP_OK:") == 0, "local PIN pickup");
-  check(ble(c, f, "PICKUP:" + pin) == "FAIL:WRONG_PIN" && f.pulses == 2,
-        "PIN consumed before closing");
+  check(ble(c, f, "PICKUP:" + pin) == "FAIL:PHONE_INTERNET_REQUIRED", "local PIN opening disabled");
+  check(ble(c, f, "EXEC:" + command('P', Subject, 1, pin, "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")).find("WORKFLOW_OK:") == 0,
+        "authenticated online pickup");
   cycle(c, f);
   check(c.state().compartments[0].phase == Phase::Empty && c.state().journal[0].kind == 'P',
         "P door cycle");
-  check(ble(c, f, "PICKUP:" + pin) == "FAIL:WRONG_PIN", "one time PIN");
+  check(ble(c, f, "PICKUP:" + pin) == "FAIL:PHONE_INTERNET_REQUIRED", "PIN cannot bypass online authorization");
   input(c, InputKind::Ack, "k1|" + std::string(c.state().journal[0].id));
   check(ble(c, f, "EXEC:" + command('D', Subject, 1, "-", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")) ==
             "FAIL:ALREADY_USED",
@@ -279,51 +293,29 @@ void failureTests() {
   LockerCore blocked(lock, "LKR-TEST");
   blocked.begin();
   enable(blocked);
-  ble(blocked, lock, "PICKUP:999999");
-  ble(blocked, lock, "PICKUP:999999");
-  check(ble(blocked, lock, "PICKUP:999999") == "FAIL:LOCKED:60", "three attempts");
-  check(ble(blocked, lock, "RETURN:" + permit() + ":" + Subject).find("FAIL:LOCKED:") == 0,
-        "60 second lock");
+  ble(blocked, lock, "EXEC:" + command('D'));
+  cycle(blocked, lock);
+  ble(blocked, lock, "RECEIPT:0:999999");
+  ble(blocked, lock, "RECEIPT:0:999999");
+  check(ble(blocked, lock, "RECEIPT:0:999999") == "FAIL:LOCKED:60", "three receipt PIN attempts");
   lock.now += 60000;
-  check(ble(blocked, lock, "RETURN:" + permit() + ":" + Subject).find("RETURN_OK:") == 0,
-        "lock expires");
+  check(ble(blocked, lock, "RECEIPT:0:" + std::string(blocked.state().journal[0].pin)).find("o1|") == 0,
+        "receipt lock expires");
 }
 void offlineAndRelayTests() {
   Fake f;
-  LockerCore c(f, "LKR-TEST");
-  c.begin();
-  input(c, InputKind::Inventory, "1:14");
-  check(ble(c, f, "RETURN:" + permit() + ":" + Subject).find("RETURN_OK:1:") == 0,
-        "configured one compartment");
-  cycle(c, f);
-  check(ble(c, f, "RETURN:" + permit() + ":" + Other) == "FAIL:NO_COMPARTMENT",
-        "unknown channels unavailable");
-  check(ble(c, f, "RETURN:" + permit() + ":" + Subject).find("ALREADY_ACCEPTED:") == 0 &&
-            f.pulses == 1,
-        "offline retry");
-  Fake relay;
-  LockerCore proxy(relay, "LKR-TEST");
-  proxy.begin();
-  enable(proxy);
-  relay.online = true;
-  check(ble(proxy, relay, "PREPARE:" + permit() + ":N:" + Subject) == "PENDING", "relay prepare");
-  check(relay.messages.back().first == "workflow/request", "relay MQTT topic");
-  input(proxy, InputKind::Remote, "1|" + command('R', Subject, 1, "471839"));
-  check(relay.pulses == 1 && relay.response.find("WORKFLOW_OK:") == 0,
-        "relay response correlation");
-  input(proxy, InputKind::Remote, "1|" + command('R', Subject, 1, "471839"));
-  check(relay.pulses == 1, "late duplicate response");
-  Fake timeout;
-  LockerCore slow(timeout, "LKR-TEST");
-  slow.begin();
-  enable(slow);
-  timeout.online = true;
-  ble(slow, timeout, "PREPARE:" + permit() + ":N:" + Subject);
-  timeout.now += 60000;
-  slow.tick();
-  check(timeout.response == "FAIL:NETWORK_TIMEOUT", "relay timeout");
-  input(slow, InputKind::Remote, "1|" + command('R', Subject, 1, "471839"));
-  check(timeout.pulses == 0, "late reply cannot open");
+  LockerCore c(f, "LKR-TEST"); c.begin(); enable(c);
+  for (bool online : {false,true}) {
+    f.online=online;
+    for (const auto &body : {"RETURN:"+permit()+":"+Subject, std::string("PICKUP:471839"), "PREPARE:"+permit()+":N:"+Subject})
+      check(ble(c,f,body)=="FAIL:PHONE_INTERNET_REQUIRED" && f.pulses==0, "phone offline commands rejected");
+  }
+  input(c,InputKind::Ble,"1|EXEC:"+command('R'));
+  check(f.response=="FAIL:COMMAND_AUTH" && f.pulses==0,"unsigned BLE cannot open");
+  input(c,InputKind::Ble,"1|RESET:z1|aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa|LKR-TEST|1|"+Subject+"|1792443600|-");
+  check(f.response=="FAIL:COMMAND_AUTH" && f.pulses==0,"unsigned BLE cannot reset");
+  input(c,InputKind::Remote,"1|"+command('R'));
+  check(f.pulses==0,"retired proxy response cannot open");
   Fake pin;
   LockerCore provision(pin, "LKR-TEST");
   provision.begin();
@@ -465,8 +457,24 @@ int main(int argc, char **argv) {
     offlineAndRelayTests();
     queueTests();
     capacityAndReplayTests();
-    if (argc > 1)
+    if (argc > 1) {
       contractFixtures(argv[1]);
+      std::ifstream signedCommands(std::string(argv[1]) + "/ble-commands.txt");
+      std::ifstream rawCommands(std::string(argv[1]) + "/commands.txt");
+      std::string signedLine, rawLine, decoded;
+      unsigned count = 0;
+      while (std::getline(signedCommands, signedLine) && std::getline(rawCommands, rawLine)) {
+        if (!signedLine.empty() && signedLine.back() == '\r') signedLine.pop_back();
+        if (!rawLine.empty() && rawLine.back() == '\r') rawLine.pop_back();
+        check(verifyBluetoothCommand(signedLine, std::string(64, '1'), decoded) && decoded == rawLine, "real BE signature must verify");
+        check(!verifyBluetoothCommand(signedLine, std::string(64, '2'), decoded), "wrong device key must fail");
+        signedLine.back() = signedLine.back() == 'a' ? 'b' : 'a';
+        check(!verifyBluetoothCommand(signedLine, std::string(64, '1'), decoded), "tampered command must fail");
+        check(!verifyBluetoothCommand(rawLine, std::string(64, '1'), decoded), "unsigned command must fail");
+        ++count;
+      }
+      check(count == 4, "all signed D/P/R/G fixtures required");
+    }
     std::cout << "PASS: " << checks
               << " checks (protocol, NVS, D/P/R/G, PIN, relay, door cycle, timeout, retry, ACK)\n";
     return 0;

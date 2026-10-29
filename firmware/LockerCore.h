@@ -38,6 +38,7 @@ public:
   virtual bool closed(unsigned index) const = 0;
   virtual uint32_t random() = 0;
   virtual bool connected() const = 0;
+  virtual Text commandSigningKey() const { return {}; }
   virtual uint32_t connectionGeneration() const = 0;
   virtual bool publish(Text suffix, Text payload, bool retained = false) = 0;
   virtual void respond(Text requestId, Text result) = 0;
@@ -67,8 +68,6 @@ private:
   uint8_t wrong_ = 0;
   uint64_t blocked_ = 0, lastReplay_ = 0;
   uint32_t generation_ = 0;
-  std::string pendingRequest_;
-  uint64_t pendingUntil_ = 0;
   bool persist();
   unsigned freeRecords() const;
   unsigned reservedRecords() const;
@@ -77,7 +76,6 @@ private:
   std::string newPin();
   std::string workflow(Text command);
   std::string resetCompartment(Text command);
-  std::string offlineReturn(Text body);
   std::string pickup(Text pin);
   std::string wrongPin();
   bool acknowledge(Text value);

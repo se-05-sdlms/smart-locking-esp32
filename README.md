@@ -13,7 +13,7 @@ Firmware mới cho ESP32 Dev Module, hỗ trợ tối đa bốn kênh relay/côn
 
 Relay HIGH mở 2 giây; timer tự đưa về LOW. Cửa đóng nối GND → LOW; mở → HIGH, INPUT_PULLUP, debounce 50 ms. Không coi kích relay là cửa đã mở hoặc giao dịch đã hoàn tất.
 
-Mã tủ mặc định lấy ba byte cuối MAC Wi-Fi eFuse (`LKR-XXXXXX`), có thể đặt CUSTOM_DEVICE_ID trong secrets. README trước đây ghi tủ A `LKR-309228` bốn ngăn, tủ B `LKR-1A0844` một ngăn. Dùng các ngăn BE thực sự khai báo; firmware không thêm ngăn trong DB.
+Mã tủ lấy ba byte cuối MAC Wi-Fi eFuse (`LKR-XXXXXX`); không dùng CUSTOM_DEVICE_ID để đổi danh tính board. Firmware tự chọn tài khoản và khóa tương ứng trong secrets.h theo MAC thật. README trước đây ghi tủ A `LKR-309228` bốn ngăn, tủ B `LKR-1A0844` một ngăn. Dùng các ngăn BE thực sự khai báo; firmware không thêm ngăn trong DB.
 
 ## Build
 
@@ -30,9 +30,9 @@ Arduino IDE: ESP32 Dev Module, flash 4 MB, PSRAM Disabled, Huge APP 3 MB No OTA,
 
 - MQTT online: `c1` D/P/R/G và lệnh mở vận hành từ BE.
 - BLE: service fff0, ghi fff1, phản hồi fff2, ID fff3, cửa fff4. Frame `requestId|body`.
-- Điện thoại có mạng/tủ mất mạng: EXEC từ BE qua BLE.
-- Điện thoại mất mạng/tủ có mạng: PREPARE qua MQTT của tủ.
-- Cả hai mất mạng: resident dùng permit đã lưu để RETURN hoặc PIN inbound đã nạp để PICKUP.
+- Điện thoại có Internet/tủ mất MQTT: BE xác thực quyền rồi cấp `b2|HMAC|c1...`; điện thoại chuyển qua BLE. RESET dùng cùng envelope với payload z1.
+- Điện thoại mất Internet: không tạo giao dịch mới. RETURN/PICKUP/PREPARE cũ bị từ chối; không còn resident permit.
+- Khóa HMAC 32 byte (64 ký tự hex) riêng từng tủ trong `MqttDeviceAccount.commandSigningKeyHex` phải khớp `Bluetooth:CommandSigningKeys:<DeviceIdentifier>` của BE. Thiếu/sai khóa không mở hoặc reset. Nạp BE và firmware mới cùng đợt.
 - Chỉ hoàn tất sau cửa mở rồi đóng; nhật ký giữ trong NVS đến ACK từ BE.
 - NVS lỗi giữ nguyên dữ liệu và chặn mở mới. Ngăn chưa có inventory không được tự coi là trống.
 
@@ -44,7 +44,7 @@ Bộ nhớ dùng namespace mới `locker_core_v1`. Trước khi triển khai và
 .\tests\run-tests.ps1 -BackendRoot D:\code_capstone\smart-locking-be
 ```
 
-Cần .NET 8 và g++ C++17 (script nhận đường dẫn qua `-Compiler`). Tests dùng core và adapter production với GPIO/NVS giả lập; không mở relay thật hoặc gửi lệnh lên broker. Source BE chỉ được link để kiểm tra codec, không sửa file BE.
+Cần .NET 8, g++ C++17 và OpenSSL libcrypto cho native tests (script nhận đường dẫn qua `-Compiler`). Tests dùng core và adapter production với GPIO/NVS giả lập; không mở relay thật hoặc gửi lệnh lên broker. Source BE chỉ được link để kiểm tra codec, không sửa file BE.
 
 Đọc [báo cáo phân tích và kết quả](docs/FIRMWARE_REBUILD.md) để xem hợp đồng, vai trò từng file, kết quả kiểm tra và các giới hạn chưa thể giải quyết chỉ bằng firmware, đặc biệt phí offline và tích hợp client. Không coi compile/native test là nghiệm thu board thật.
 

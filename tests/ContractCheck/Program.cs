@@ -1,4 +1,5 @@
 using smart_locking_be.Infrastructure.Services;
+using Microsoft.Extensions.Configuration;
 var codec = new BluetoothProtocol();
 string folder = args[1];
 if (args[0] == "generate")
@@ -13,7 +14,12 @@ if (args[0] == "generate")
         codec.CreateCommand(device,returned,1,"R",phone,"471839",expiry,Guid.ParseExact(new string('c',32),"N")),
         codec.CreateCommand(device,returned,1,"G",phone,"471839",expiry,Guid.ParseExact(new string('d',32),"N"))
     });
-    Console.WriteLine("Generated D/P/R/G commands with actual BE codec.");
+    var configuration = new ConfigurationBuilder().AddInMemoryCollection(new Dictionary<string,string?> {
+        ["Bluetooth:CommandSigningKeys:LKR-TEST"] = new string('1',64)
+    }).Build();
+    var signer = new HmacBluetoothCommandSigner(configuration);
+    File.WriteAllLines(Path.Combine(folder,"ble-commands.txt"), File.ReadAllLines(Path.Combine(folder,"commands.txt")).Select(command => signer.Sign(device, command)));
+    Console.WriteLine("Generated D/P/R/G commands with actual BE codec and HMAC signer.");
 }
 else
 {

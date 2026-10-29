@@ -3,12 +3,13 @@ param(
   [string]$Compiler = 'C:\msys64\ucrt64\bin\g++.exe'
 )
 $ErrorActionPreference = 'Stop'
+$env:PATH = (Split-Path -Parent $Compiler) + ';' + $env:PATH
 $taskRoot = Split-Path -Parent $PSScriptRoot
 $taskOutput = Join-Path ([System.IO.Path]::GetTempPath()) ('locker-firmware-check-' + [guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $taskOutput | Out-Null
 $taskCore = Join-Path $taskRoot 'firmware'
 $taskBinary = Join-Path $taskOutput 'core-tests.exe'
-& $Compiler -std=c++17 -O1 -Wall -Wextra -Werror -I (Join-Path $PSScriptRoot 'support') -I $taskCore (Join-Path $taskCore 'Protocol.cpp') (Join-Path $taskCore 'LockerCore.cpp') (Join-Path $taskCore 'StateStore.cpp') (Join-Path $PSScriptRoot 'core_tests.cpp') -o $taskBinary
+& $Compiler -std=c++17 -O1 -Wall -Wextra -Werror -I (Join-Path $PSScriptRoot 'support') -I $taskCore (Join-Path $taskCore 'Protocol.cpp') (Join-Path $taskCore 'LockerCore.cpp') (Join-Path $taskCore 'StateStore.cpp') (Join-Path $taskCore 'BluetoothCommand.cpp') (Join-Path $PSScriptRoot 'core_tests.cpp') -lcrypto -o $taskBinary
 if ($LASTEXITCODE -ne 0) { throw 'Native build failed.' }
 $taskHardware = Join-Path $taskOutput 'hardware-tests.exe'
 & $Compiler -std=c++17 -O1 -Wall -Wextra -Werror -I (Join-Path $PSScriptRoot 'support') -I $taskCore (Join-Path $taskCore 'Hardware.cpp') (Join-Path $PSScriptRoot 'hardware_tests.cpp') -o $taskHardware

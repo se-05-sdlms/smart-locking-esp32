@@ -1,4 +1,5 @@
 #include "LockerCore.h"
+#include "BluetoothCommand.h"
 #include <algorithm>
 #include <cstdio>
 #include <cstring>
@@ -237,50 +238,6 @@ std::string LockerCore::resetCompartment(Text payload) {
   if (!persist()) { state_ = before; return proof("FAIL_STORAGE"); }
   return proof("OK");
 }
-std::string LockerCore::offlineReturn(Text body) {
-  Text f[2];
-  std::string phone;
-  if (!split(body, ':', f, 2) || !hexId(f[1]) || !parsePermit(f[0], device_, io_.utc(), phone))
-    return "FAIL:RESIDENT_PERMISSION";
-  if (io_.connected())
-    return "FAIL:USE_PREPARE";
-  for (const auto &c : state_.compartments) {
-    if (f[1] == c.consumed)
-      return "FAIL:ALREADY_USED";
-    if (c.phase != Phase::Empty && f[1] == c.subject) {
-      if (!c.returning || phone != c.phone || c.phase == Phase::PickingUp)
-        return "FAIL:WRONG_TRANSACTION";
-      return "ALREADY_ACCEPTED:" + std::string(f[1]) + ":" + c.pin;
-    }
-  }
-  if (freeRecords() < reservedRecords() + 2 || state_.sequence == INT64_MAX)
-    return "FAIL:SYNC_REQUIRED";
-  for (unsigned i = 0; i < Channels; ++i) {
-    auto &c = state_.compartments[i];
-    if (c.phase != Phase::Empty || (state_.inventoryMask & (1 << i)) || unsent(i) || !io_.closed(i))
-      continue;
-    Compartment before = c;
-    c.phase = Phase::Depositing;
-    c.returning = true;
-    c.opened = false;
-    copyText(c.subject, 33, f[1]);
-    copyText(c.phone, 11, phone);
-    copyText(c.pin, 7, newPin());
-    copyText(c.eventId, 33, newId());
-    c.started = io_.monotonic();
-    c.openedUtc = 0;
-    warned_[i] = false;
-    if (!persist())
-      return "FAIL:STORAGE";
-    if (!io_.pulse(i)) {
-      c = before;
-      persist();
-      return "FAIL:RELAY_TIMER";
-    }
-    return "RETURN_OK:" + std::to_string(i + 1) + ":" + c.subject + ":" + c.pin;
-  }
-  return "FAIL:NO_COMPARTMENT";
-}
 std::string LockerCore::wrongPin() {
   if (++wrong_ >= 3) {
     wrong_ = 0;
@@ -389,8 +346,17 @@ void LockerCore::ble(Text frame) {
     io_.respond(id, "FAIL:NOT_CONFIGURED_OR_STORAGE");
     return;
   }
+  if (body.substr(0, 7) == "RETURN:" || body.substr(0, 7) == "PICKUP:" || body.substr(0, 8) == "PREPARE:") {
+    io_.respond(id, "FAIL:PHONE_INTERNET_REQUIRED");
+    return;
+  }
   if (body.substr(0, 6) == "RESET:") {
-    std::string result = resetCompartment(body.substr(6));
+    std::string verified;
+    if (!verifyBluetoothCommand(body.substr(6), io_.commandSigningKey(), verified)) {
+      io_.respond(id, "FAIL:COMMAND_AUTH");
+      return;
+    }
+    std::string result = resetCompartment(verified);
     io_.respond(id, result);
     // Nếu web ngắt sau khi ESP đã lưu, MQTT vẫn có thể chuyển kết quả về BE.
     if (result.substr(0, 3) == "z2|") io_.publish("events/state-reset", result);
@@ -409,31 +375,12 @@ void LockerCore::ble(Text frame) {
     return;
   }
   std::string result;
-  if (body.substr(0, 5) == "EXEC:")
-    result = workflow(body.substr(5));
-  else if (body.substr(0, 7) == "RETURN:")
-    result = offlineReturn(body.substr(7));
-  else if (body.substr(0, 7) == "PICKUP:")
-    result = pickup(body.substr(7));
-  else if (body.substr(0, 8) == "PREPARE:") {
-    Text f[3];
-    std::string phone;
-    if (!split(body.substr(8), ':', f, 3) || !parsePermit(f[0], device_, io_.utc(), phone) ||
-        (f[1] != "N" && f[1] != "R" && f[1] != "P") || !hexId(f[2]))
-      result = "FAIL:REQUEST";
-    else if (!io_.connected())
-      result = "FAIL:NETWORK_OFFLINE";
-    else if (!pendingRequest_.empty())
-      result = "FAIL:REQUEST_PENDING";
-    else if (!io_.publish("workflow/request", std::string(id) + ":" + std::string(f[1]) + ":" +
-                                                  std::string(f[2]) + ":" + std::string(f[0])))
-      result = "FAIL:QUEUE_FULL";
-    else {
-      pendingRequest_ = id;
-      pendingUntil_ = io_.monotonic() + 60000;
-      result = "PENDING";
-    }
-  } else if (body == "LIST" || body.substr(0, 5) == "LIST:") {
+  if (body.substr(0, 5) == "EXEC:") {
+    std::string verified;
+    result = verifyBluetoothCommand(body.substr(5), io_.commandSigningKey(), verified)
+                 ? workflow(verified) : "FAIL:COMMAND_AUTH";
+  }
+  else if (body == "LIST" || body.substr(0, 5) == "LIST:") {
     uint64_t offset = 0;
     if (body != "LIST" && (!number(body.substr(5), offset) || offset >= JournalSlots))
       result = "FAIL:INDEX";
@@ -499,20 +446,7 @@ void LockerCore::handle(const Input &input) {
   case InputKind::Ack:
     acknowledge(body);
     break;
-  case InputKind::Remote: {
-    size_t sep = body.find('|');
-    if (sep == Text::npos || pendingRequest_.empty() || body.substr(0, sep) != pendingRequest_)
-      break;
-    std::string id = pendingRequest_;
-    pendingRequest_.clear();
-    if (io_.monotonic() >= pendingUntil_) {
-      io_.respond(id, "FAIL:NETWORK_TIMEOUT");
-      break;
-    }
-    Text reply = body.substr(sep + 1);
-    io_.respond(id, reply.substr(0, 5) == "FAIL:" ? std::string(reply) : workflow(reply));
-    break;
-  }
+  case InputKind::Remote: break; // Luồng điện thoại mất Internet đã bỏ.
   case InputKind::Legacy: {
     if (input.channel < 1 || input.channel > Channels || !io_.closed(input.channel - 1))
       break;
@@ -538,10 +472,6 @@ void LockerCore::handle(const Input &input) {
 }
 void LockerCore::tick() {
   uint64_t now = io_.monotonic();
-  if (!pendingRequest_.empty() && now >= pendingUntil_) {
-    io_.respond(pendingRequest_, "FAIL:NETWORK_TIMEOUT");
-    pendingRequest_.clear();
-  }
   uint32_t generation = io_.connectionGeneration();
   if (generation != generation_) {
     generation_ = generation;

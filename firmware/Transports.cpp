@@ -128,8 +128,6 @@ void Transports::inbound(Text topic, Text payload) {
     input.kind = InputKind::Pin;
   else if (suffix == "events/offline/ack")
     input.kind = InputKind::Ack;
-  else if (suffix == "workflow/response")
-    input.kind = InputKind::Remote;
   else if (suffix.substr(0, 6) == "doors/") {
     uint64_t channel;
     if (!number(suffix.substr(6), channel) || channel < 1 || channel > Channels)
@@ -214,7 +212,7 @@ void Transports::networkLoop() {
         if (mqtt_.connect(device_.c_str(), credentials_.user, credentials_.password)) {
           bool subscribed = true;
           for (const char *suffix :
-               {"doors/+", "pins", "inventory", "workflow/response", "events/offline/ack"})
+               {"doors/+", "pins", "inventory", "events/offline/ack"})
             subscribed = mqtt_.subscribe((prefix + suffix).c_str(), 1) && subscribed;
           if (subscribed) {
             ++generation_;

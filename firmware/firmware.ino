@@ -10,6 +10,7 @@ namespace {
 Hardware hardware;
 StateStore storage;
 Transports transports;
+const MqttDeviceAccount *activeAccount = nullptr;
 class Runtime final : public Ports {
 public:
   uint64_t monotonic() const override {
@@ -43,6 +44,9 @@ public:
   }
   bool connected() const override {
     return transports.online();
+  }
+  Text commandSigningKey() const override {
+    return activeAccount && activeAccount->commandSigningKeyHex ? activeAccount->commandSigningKeyHex : "";
   }
   uint32_t connectionGeneration() const override {
     return transports.generation();
@@ -96,6 +100,7 @@ void setup() {
     return;
   }
   Serial.printf("[MQTT] Device=%s username=%s\n", id.c_str(), account->username);
+  activeAccount = account;
   static LockerCore engine(runtime, id);
   core = &engine;
   core->begin();
